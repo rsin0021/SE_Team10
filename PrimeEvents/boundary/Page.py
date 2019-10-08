@@ -62,9 +62,3 @@ class Page:
     def getOptions(self):
         return self.options
 
-
-page = Page()
-page.setTitle('Welcome!!!')
-page.setOptions(dict({'1': 'go back', '2': 'login'}))
-page.setContents(['I love FIT5136!', [123, 321, 123]])
-print(page)
