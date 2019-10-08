@@ -6,6 +6,14 @@ class Hall:
         self.Deposit = deposit
         self.Discount = discount
 
+    def __str__(self):
+        return 'Hall Name: ' + self.Hall_name + '\n' +\
+               'Hall ID: ' + str(self.Hall_ID) + '\n' +\
+               'Description: ' + '\n' +\
+               self.Hall_description + '\n' +\
+               'Deposit: ' + str(self.Deposit) + '\n' +\
+               'Discount: ' + str(self.Discount)
+
     def get_Hall_name(self):
         return self.Hall_name
 

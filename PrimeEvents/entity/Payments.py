@@ -11,3 +11,6 @@ class Payment:
 
     def view_receipt(self):
         pass
+
+    def __str__(self):
+        return s

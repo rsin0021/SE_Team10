@@ -4,7 +4,7 @@ class Page:
     An object of this class can be printed as a user friendly page
 
     title: the title of the page
-    content: the information shown in the page, can be multiple contents
+    content: a list of any object
     options: the options for user to choose which is a dict: (str : str) pairs.
     wide: the number of characters of the page
     """
@@ -33,8 +33,8 @@ class Page:
             for line in lines:
                 lineLength = len(line)
                 result = result + '|' + line + ' ' * (self.wide - 2 - lineLength) + '|\n'
-            result += '|' + ' ' * (self.wide - 2) + '|\n'
-        result += '|' + '-' * (self.wide - 2) + '|\n'
+            result += '|' + '-' * (self.wide - 2) + '|\n'
+        result += '|' + ' ' * (self.wide - 2) + '|\n'
         for option in self.options:
             toPrint = 'Press ' + option + ' to ' + self.options[option]
             optionLength = len(toPrint)
