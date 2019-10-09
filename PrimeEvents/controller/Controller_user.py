@@ -1,12 +1,12 @@
 import pandas as pd
-
+from entity.Prime_Events import Prime_Events
 
 class Controller_user:
     def __init__(self):
         pass
 
     def check_input(self):
-        df = pd.read_csv('../table/halls.csv')
+        df = Prime_Events().Halls_db
         operation = input("enter N to next page" + '\n' + "enter B to exit" + '\n' +
                           "enter index to select hall" + '\n' + "enter F to search hall" + '\n')
         if operation == 'N':
@@ -23,7 +23,7 @@ class Controller_user:
             return self.check_input()
 
     def view_hall(self):
-        df = pd.read_csv('../table/halls.csv')
+        df = Prime_Events().Halls_db
         for i in range(1, int(df.shape[0] / 10) + 2):  # for each page, only display 10 halls
             if i == int(df.shape[0] / 10) + 1:
                 print(df[int(df.shape[0] / 10) * 10:])
@@ -43,9 +43,10 @@ class Controller_user:
         self.view_hall()
 
     def search_hall(self):
-        df = pd.read_csv('../table/halls.csv')
+        df = Prime_Events().Halls_db
         address = input("Enter address information to search: " + '\n')
         res = df.loc[df['Hall_description'].str.contains(address)]
+        res.index = range(len(res))
         if res.shape[0] == 0:
             print("No correspond information is found" + '\n')
             self.search_hall()
