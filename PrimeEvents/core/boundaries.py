@@ -228,9 +228,19 @@ class UserInterface:
 
     # testing
     def login_boundary(self):
-        state, user = self.cus_controller.check_login(1, 1)
-        if state:
+        scanner = Scanner()
+        email = scanner.accept_normal_attributes('email')
+        password = scanner.accept_normal_attributes('password')
+        user = self.user_controller.check_login(email,password)
+        if user == False:
+            login_fail_page = Page(title='Login Failed',
+                                   options={'Any Key' : 'go to login/register page'})
+            print(login_fail_page)
+        else:
+            print('login successfully')
             return user
+
+
 
     def view_hall_boundary(self):
         scanner = Scanner()

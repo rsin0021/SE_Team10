@@ -36,9 +36,23 @@ class UserController:
             user = Owner(name, email, uid, password, address, phone)
         return True, user
 
-    def check_login(self, name, password):
-        u = User('a', 'a', '1', '1')
-        return True, u
+    def check_login(self, enter_email, enter_password):
+        for i in range(len(self.users)):
+            name = self.users.loc[i][0]
+            email = self.users.loc[i][1]
+            userid = self.users.loc[i][2]
+            password = self.users.loc[i][3]
+            address = self.users.loc[i][4]
+            phone = self.users.loc[i][5]
+            account_type = self.users.loc[i][6]
+            if enter_email == email:
+                if enter_password == password:
+                    user = User(name,email,userid,password,address,phone,account_type)
+                    return user
+                else:
+                    return False
+        return False
+
 
     def get_halls_list(self):
         halls_list = []

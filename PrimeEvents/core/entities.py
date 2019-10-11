@@ -2,11 +2,14 @@
 
 # Parent Class User
 class User:
-    def __init__(self, user_name, user_email, user_id, password):
+    def __init__(self, user_name, user_email, user_id, password, address, phone, acount_type):
         self.user_name = user_name
         self.user_email = user_email
         self.user_id = user_id
         self.password = password
+        self.address = address
+        self.phone = phone
+        self.account_type = acount_type
 
     def set_user_name(self, user_name):
         self.user_name = user_name
@@ -32,14 +35,33 @@ class User:
     def get_password(self):
         return self.password
 
+    def set_address(self, address):
+        self.address = address
+
+    def get_address(self):
+        return self.address
+
+    def set_phone(self, phone):
+        self.phone = phone
+
+    def get_phone(self):
+        return self.phone
+
+    def set_account_type(self, account_type):
+        self.account_type = account_type
+
+    def get_account_type(self):
+        return self.account_type
+
     def __str__(self):
         return 'User ID: ' + str(self.user_id) + '\n' + \
                'User Name: ' + str(self.user_name) + '\n' + \
                'E-mail: ' + str(self.user_email) + '\n' + \
-               'Password: ' + str(self.password)
-
-
-# Child Class Customer
+               'Password: ' + str(self.password) + '\n' + \
+               'Address: ' + str(self.address) + '\n' + \
+               'Phone: ' + str(self.phone) + '\n' + \
+               'Account Type: ' + str(self.account_type)
+            # Child Class Customer
 class Customer(User):
     def __init__(self, cust_name, cust_email, cust_id, password, cust_address, cust_phone, login_as='Customer'):
         super().__init__(cust_name, cust_email, cust_id, password)
