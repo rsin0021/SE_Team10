@@ -1,5 +1,6 @@
 from core.controllers import UserController, OwnerController, CusController, AdminController
 from datetime import date
+import re
 
 
 class Page:
@@ -12,7 +13,11 @@ class Page:
     options: the options for user to choose which is a dict: (str : str) pairs.
     wide: the number of characters of the page
     """
-    def __init__(self, title='Unknown', contents=[], options=dict()):
+    def __init__(self, title='Unknown', contents=None, options=None):
+        if contents is None:
+            contents = []
+        if options is None:
+            options = dict()
         self.pageTitle = title
         self.index = 1
         self.contents = contents
@@ -189,6 +194,40 @@ class Scanner:
 
         return s_date, e_date
 
+    def accept_owner_quotation_id(self, quo_list):
+        self.massage = 'Enter the Quotation ID: '
+        while True:
+            user_input = str(input(self.massage))
+            if user_input in [str(quo.get_qid()) for quo in quo_list]:
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+        return user_input
+
+    def accept_owner_decision(self):
+        self.massage = 'Enter your decision[A:approve, R:reject]: '
+
+        while True:
+            user_input = str(input(self.massage).upper())
+            if user_input not in ['A', 'R']:
+                print('Invalid input!! TRY AGAIN')
+            else:
+                break
+        return user_input
+
+    def accept_quotation_amount(self):
+        self.massage = 'Enter the quotation amount: '
+
+        float_value = re.compile(r'^[+]?[0-9]+\.[0-9]+$')
+        int_value = re.compile(r'^[+]?[0-9]+$')
+        while True:
+            user_input = str(input(self.massage))
+            if float_value.match(user_input) or int_value.match(user_input):
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+        return user_input
+
 
 class UserInterface:
 
@@ -311,30 +350,35 @@ class UserInterface:
             option = scanner.accept_option(view_page.getOptions())
         return option
 
-    # testing
     def book_hall_boundary(self, user):
+        pass
 
-        # get user inputs
+    def response_quotation_boundary(self, owner):
         scanner = Scanner()
-        hid = scanner.accept_normal_attributes('Hall ID')
-        s_date, e_date = scanner.accept_book_date()
-        uid = user.get_user_id()
-        bid = self.user_controller.generate_id('booking')
-        b_date = date.today()
-        pid = None
-        amount = 'Unknown'
+        state, quo_list = self.owner_controller.get_quotations_by_oid(owner.get_user_id())
+        quo_page = Page(title='Quotation Requests', contents=quo_list,
+                        options={'R': 'response a quotation', 'H': 'go to home page'})
+        print(quo_page)
+        option = scanner.accept_option(quo_page.getOptions())
+        if option == 'H':
+            return option
+        else:
+            qid = scanner.accept_owner_quotation_id(quo_list)
+            decision = scanner.accept_owner_decision()
+            if decision == 'A':
+                amount = scanner.accept_quotation_amount()
+            else:
+                amount = 'Unknown'
+            state = self.owner_controller.update_quotation_status(qid, decision, amount)
+            if state:
+                response_page = Page(title='Quotation Requests', contents=['Response send!'],
+                                     options={'Any Key': 'back to quotation requests page'})
+                print(response_page)
+            else:
+                error_page = Page(title='Quotation Requests', contents=['Error!'],
+                                  options={'Any Key': 'back to quotation requests page'})
+                print(error_page)
+            return 'Q'
 
-        # create the booking
-        state, booking = self.cus_controller.add_booking(bid, hid, uid, b_date, s_date, e_date, amount, pid)
 
-        # now the booking is added, but cus has to paid deposit to make sure it would not be deleted
-        if state:
-            book_page = Page(title='Booking Page', contents=[booking],
-                             options={'C': 'confirm', 'G': 'give up'})
 
-            print(book_page)
-            option = scanner.accept_option(book_page.getOptions())
-            if option == 'G':
-                # if give up, delete the booking
-                self.cus_controller.delete_booking(booking.get_book_id())
-                return option

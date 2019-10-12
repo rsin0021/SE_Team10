@@ -61,7 +61,7 @@ class UserController:
         halls_list = []
         # get numpy array of halls
         for row in self.halls.values:
-            halls_list.append(Hall(row[0], row[1], row[2], row[3], row[4]))
+            halls_list.append(Hall(row[0], row[1], row[2], row[3], row[4], row[5]))
         return halls_list
 
     def get_users_list(self):
@@ -124,11 +124,11 @@ class CusController(UserController):
 
     def add_quotation(self, hid, s_date, e_date, num_of_ges, cus_id):
         qid = self.generate_id('quotation')
-        hall_name = (self.halls[self.halls['Hall_ID'] == 1])['Hall_name'].values[0]
+        hall_name = (self.halls[self.halls['hid'] == 1])['Hall_name'].values[0]
 
-        quo = Quotation(self, qid, hid, hall_name, cus_id, num_of_ges, s_date, e_date)
+        quo = Quotation(qid, hid, hall_name, cus_id, num_of_ges, s_date, e_date)
 
-        data = {'qid': [qid], 'hall_id': [hid], 'hall_name': [hall_name], 'cus_id': [cus_id],
+        data = {'qid': [qid], 'hid': [hid], 'hall_name': [hall_name], 'cus_id': [cus_id],
                 'guests': [num_of_ges], 's_date': [s_date], 'e_date': [e_date],
                 'amount': [quo.get_amount()], 'status': [quo.get_status()]}
         quotation_row = pd.DataFrame(data)
@@ -138,11 +138,36 @@ class CusController(UserController):
         return True, quo
 
     def check_hall_exist(self, hid):
-        return not self.halls[self.halls['Hall_ID'] == int(hid)].size == 0
+        return not self.halls[self.halls['hid'] == int(hid)].size == 0
 
 
 class OwnerController(UserController):
-    pass
+
+    def get_quotations_by_oid(self, oid):
+        # first get all hid of this owner
+        hid_list = []
+        for row in (self.halls[self.halls['oid'] == int(oid)]).values:
+            hid_list.append(row[1])
+
+        # second get all quotations which match these hid
+        quo_list = []
+        for hid in hid_list:
+            for row in self.quotations[(self.quotations['hid'] == int(hid))
+                                       & (self.quotations['status'] == 'pending')].values:
+                quo = Quotation(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8])
+                quo_list.append(quo)
+
+        return True, quo_list
+
+    def update_quotation_status(self, qid, decision, amount):
+        if decision == 'R':
+            decision = 'rejected'
+        else:
+            decision = 'approved'
+        self.quotations.loc[self.quotations['qid'] == int(qid), 'status'] = decision
+        self.quotations.loc[self.quotations['qid'] == int(qid), 'amount'] = amount
+        self.quotations.to_csv('../data/quotations.csv', header=True, index=False)
+        return True
 
 
 class AdminController(UserController):

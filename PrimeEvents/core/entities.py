@@ -101,9 +101,10 @@ class Admin(User):
 
 
 class Hall:
-    def __init__(self, name, hid, desc, deposit, discount=1.0):
+    def __init__(self, name, hid, oid, desc, deposit, discount=1.0):
         self.hall_name = name
         self.hall_ID = hid
+        self.oid = oid
         self.hall_description = desc
         self.deposit = deposit
         self.discount = discount
@@ -115,6 +116,12 @@ class Hall:
                self.hall_description + '\n' +\
                'Deposit: ' + str(self.deposit) + '\n' +\
                'Discount: ' + str(self.discount)
+
+    def get_oid(self):
+        return self.oid
+
+    def set_oid(self, oid):
+        self.oid = oid
 
     def get_hall_name(self):
         return self.hall_name
@@ -273,7 +280,8 @@ class Quotation:
         self.status = status
 
     def __str__(self):
-        return 'Hall Name: ' + str(self.hall_name) + '\n' +\
+        return 'Quotation ID: ' + str(self.qid) + '\n' +\
+               'Hall Name: ' + str(self.hall_name) + '\n' +\
                'Book from ' + str(self.s_date) +\
                ' To ' + str(self.e_date) + '\n' +\
                'Quotation status:' + str(self.status) + '\n' +\
