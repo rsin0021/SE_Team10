@@ -228,6 +228,48 @@ class Scanner:
                 print('Invalid input!! TRY AGAIN')
         return user_input
 
+    def accept_cus_quotation_id(self, quo_list):
+        self.massage = 'Enter the Quotation ID: '
+        while True:
+            user_input = str(input(self.massage))
+            if user_input in [str(quo.get_qid()) for quo in quo_list]:
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+        return user_input
+
+    def accept_bankcard_num(self):
+        self.massage = 'Enter Bank Card Num(12 digits): '
+        while True:
+            user_input = str(input(self.massage))
+            if user_input.isdecimal() and len(user_input) == 12:
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+        return user_input
+
+    def accept_valid_date(self):
+        self.massage = 'Enter Vaild Date(MM-YY): '
+        ok_date = re.compile(r'^([0][1-9])|([1][0-2])-[0-9][0-9]$')
+        while True:
+            user_input = str(input(self.massage))
+            if ok_date.match(user_input):
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+        return user_input
+
+    def accept_save_code(self):
+        self.massage = 'Enter Save Code(3digits): '
+        code = re.compile(r'^[0-9]{3}$')
+        while True:
+            user_input = str(input(self.massage))
+            if code.match(user_input):
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+        return user_input
+
 
 class UserInterface:
 
@@ -273,12 +315,13 @@ class UserInterface:
 
         # If register successfully display the information of the account
         if state:
-            ok_page = Page(title='Register Successfully!',
-                           contents=[user],
+            ok_page = Page(title='Register',
+                           contents=['Succeed!', user],
                            options={'Any Key': 'go to login/register page'})
             print(ok_page)
         else:
-            not_ok_page = Page(title='Register Failed!',
+            not_ok_page = Page(title='Register',
+                               contents=['Failed!'],
                                options={'Any Key': 'go to login/register page'})
             print(not_ok_page)
         scanner.accept_any_key()
@@ -292,13 +335,14 @@ class UserInterface:
         password = scanner.accept_normal_attributes('password')
         state, user = self.user_controller.check_login(email, password)
         if not state:
-            login_fail_page = Page(title='Login Failed',
+            login_fail_page = Page(title='Login',
+                                   contents='Failed!',
                                    options={'Any Key': 'go to login/register page'})
             print(login_fail_page)
             scanner.accept_any_key()
             option = 'L'
         else:
-            login_ok_page = Page(title='Login Succeeded', options={'Any Key': 'go to home page'})
+            login_ok_page = Page(title='Login', contents=['Succeeded'], options={'Any Key': 'go to home page'})
             print(login_ok_page)
             scanner.accept_any_key()
             option = 'H'
@@ -325,11 +369,11 @@ class UserInterface:
         # call controller
         state, quo = self.cus_controller.add_quotation(hid, s_date, e_date, num_of_ges, cus_id)
 
-        send_page = Page(title='Quotation sand successfully', contents=[quo],
-                         options={'Any Key': 'back to search hall page'})
+        send_page = Page(title='Request Quotation', contents=['Send successfully!', quo],
+                         options={'Any Key': 'back to view hall page'})
         print(send_page)
         scanner.accept_any_key()
-        return 'S'
+        return 'V'
 
     def view_hall_boundary(self):
         scanner = Scanner()
@@ -351,7 +395,66 @@ class UserInterface:
         return option
 
     def book_hall_boundary(self, user):
-        pass
+        scanner = Scanner()
+        state, quo_list = self.cus_controller.get_approved_quotations(user.get_user_id())
+        if state:
+            if len(quo_list) > 0:
+                quo_page = Page(title='Your Approved Quotations', contents=quo_list,
+                                options={'C': 'choose', 'B': 'back to view hall page'})
+                print(quo_page)
+            else:
+                quo_page = Page(title='Your Approved Quotations', contents=['You have no approved quotation'],
+                                options={'Any Key': 'back to view hall page'})
+                print(quo_page)
+            option = scanner.accept_option(quo_page.getOptions())
+            # first choose which hall to book
+            if option == 'C':
+                qid = scanner.accept_cus_quotation_id(quo_list)
+                # second do the pay depose
+                next_option, payment = self.pay_depose_boundary(user, qid)
+
+                # if paid
+                if next_option in ['R', 'S']:
+                    if next_option == 'R':
+                        receipt = self.cus_controller.generate_receipt(payment)
+                        receipt_page = Page(title='Your Receipt', contents=[receipt],
+                                            options={'Any Key': 'see booking detail'})
+                        print(receipt_page)
+                        scanner.accept_any_key()
+                    state2, booking = self.cus_controller.add_booking(payment, qid)
+                    booking_ok_page = Page(title='Booking Detail', contents=[booking],
+                                           options={'Any Key': 'back to view hall page'})
+                    print(booking_ok_page)
+                    scanner.accept_any_key()
+                    return 'V'
+                # if not paid
+                elif next_option == 'G':
+
+                    return 'V'
+            else:
+                return 'V'
+
+    def pay_depose_boundary(self, user, qid):
+        scanner = Scanner()
+        bankcard = scanner.accept_bankcard_num()
+        name = scanner.accept_normal_attributes('Name on the Card')
+        valid_date = scanner.accept_valid_date()
+        code = scanner.accept_save_code()
+        deposit = self.cus_controller.get_deposit_by_qid(qid)
+        confirm_page = Page(title='Pay Deposit', contents=['Deposit: ' + str(deposit)],
+                            options={'C': 'confirm', 'G': 'give up'})
+        print(confirm_page)
+        option1 = scanner.accept_option(confirm_page.getOptions())
+        if option1 == 'C':
+            state, payment = self.cus_controller.add_payment(user.get_user_id(), qid)
+            if state:
+                pay_ok_page = Page(title='Pay Deposit', contents=['Payment Approved!', payment],
+                                   options={'R': 'print receipt', 'S': 'see booking detail'})
+                print(pay_ok_page)
+                option = scanner.accept_option(pay_ok_page.getOptions())
+                return option, payment
+        else:
+            return 'G', None
 
     def response_quotation_boundary(self, owner):
         scanner = Scanner()

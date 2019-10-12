@@ -166,7 +166,7 @@ class Booking:
         self.pid = pid
 
     def __str__(self):
-        return 'Hall ID: ' + self.hall_ID + '\n' +\
+        return 'Hall ID: ' + str(self.hall_ID) + '\n' +\
                'Booking Date: ' + str(self.booking_date) + '\n' +\
                'Book from ' + str(self.s_date) +\
                ' To ' + str(self.e_date) + '\n' +\
@@ -233,7 +233,6 @@ class Payment:
     def __str__(self):
         return 'Transaction ID: ' + str(self.transaction_id) + '\n' +\
                'transaction Date: ' + str(self.transaction_date) + '\n' +\
-               'Paid from ' + str(self.send_from) + ' To ' + str(self.send_to) + '\n' +\
                'Amount: ' + str(self.amount)
 
     def get_transaction_id(self):

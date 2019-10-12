@@ -11,9 +11,10 @@ while True:
         prime_events.register_boundary()
 
 
-prime_events.response_quotation_boundary(user)
+
 #prime_events.view_hall_boundary()
-prime_events.request_quotation_boundary(user)
+#prime_events.request_quotation_boundary(user)
+#prime_events.response_quotation_boundary(user)
 prime_events.book_hall_boundary(user)
 
 

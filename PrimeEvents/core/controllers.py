@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import datetime
 from core.entities import Customer, Owner, Admin, Hall, Payment, Booking, User, Quotation
 
 
@@ -98,25 +99,52 @@ class UserController:
 
 class CusController(UserController):
 
-    def add_booking(self, bid, hid, uid, b_date, s_date, e_date, amount, pid):
+    def add_booking(self, payment, qid):
+        bid = self.generate_id('booking')
+        hid = self.quotations[self.quotations['qid'] == int(qid)].values[0][1]
+        uid = payment.get_send_from()
+        now = datetime.now()
+        b_date = '{0}-{1}-{2} {3}:{4}:{5}'.format(str(now.day), str(now.month), str(now.year), str(now.hour),
+                                                    str(now.minute), str(now.second))
+        s_date = self.quotations[self.quotations['qid'] == int(qid)].values[0][5]
+        e_date = self.quotations[self.quotations['qid'] == int(qid)].values[0][6]
+        amount = self.quotations[self.quotations['qid'] == int(qid)].values[0][7]
+        pid = payment.get_transaction_id()
         booking = Booking(bid, hid, uid, b_date, s_date, e_date, amount, pid)
         data = {'bid': [bid], 'hid': [hid], 'uid': [uid], 'b_date': [b_date],
-                's_date': [s_date], 'e_date': [e_date], 'amount': [amount], 'pid': [pid], 'status': [booking.get_status()]}
+                's_date': [s_date], 'e_date': [e_date], 'amount': [amount], 'pid': [pid]}
         booking_row = pd.DataFrame(data)
         booking_row.to_csv('../data/bookings.csv', mode='a', header=False, index=False)
+        self.bookings = pd.read_csv('../data/bookings.csv')
+        # refresh
         self.bookings = pd.read_csv('../data/bookings.csv')
         return True, booking
 
     def delete_booking(self, bid):
         pass
 
-    def add_payment(self, tid, date, send_from, send_to, amount):
-        data = {'tid': [tid], 'date': [date], 'send_from': [send_from],
-                'send_to': [send_to], 'amount': [amount]}
+    def add_payment(self, cid, qid):
+        # generate payment id
+        pid = self.generate_id('payment')
+        # get system date
+        now = datetime.now()
+        pay_date = '{0}-{1}-{2} {3}:{4}:{5}'.format(str(now.day), str(now.month), str(now.year), str(now.hour),
+                                                    str(now.minute), str(now.second))
+        # find the owner id
+        hid = self.quotations[self.quotations['qid'] == int(qid)].values[0][1]
+        oid = self.halls[self.halls['hid'] == int(hid)].values[0][2]
+
+        # find the deposit amount
+        amount = self.halls[self.halls['hid'] == int(hid)].values[0][4]
+
+        payment = Payment(pid, pay_date, cid, oid, amount)
+        # pid,date,send_from,send_to,amount
+        data = {'pid': [pid], 'date': [pay_date],
+                'send_from': [cid], 'send_to': [oid], 'amount': [amount]}
         payment_row = pd.DataFrame(data)
         payment_row.to_csv('../data/payments.csv', mode='a', header=False, index=False)
+        # refresh
         self.payments = pd.read_csv('../data/payments.csv')
-        payment = Payment(tid, date, send_from, send_to, amount)
         return True, payment
 
     def check_payment(self):
@@ -124,7 +152,7 @@ class CusController(UserController):
 
     def add_quotation(self, hid, s_date, e_date, num_of_ges, cus_id):
         qid = self.generate_id('quotation')
-        hall_name = (self.halls[self.halls['hid'] == 1])['Hall_name'].values[0]
+        hall_name = (self.halls[self.halls['hid'] == 1])['Hall_name'].values[0][0]
 
         quo = Quotation(qid, hid, hall_name, cus_id, num_of_ges, s_date, e_date)
 
@@ -139,6 +167,34 @@ class CusController(UserController):
 
     def check_hall_exist(self, hid):
         return not self.halls[self.halls['hid'] == int(hid)].size == 0
+
+    def get_approved_quotations(self, cid):
+        quo_list = []
+        for row in self.quotations[(self.quotations['cus_id'] == int(cid))
+                        & (self.quotations['status'] == 'approved')].values:
+            quo = Quotation(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8])
+            quo_list.append(quo)
+        return True, quo_list
+
+    def get_deposit_by_qid(self, qid):
+        hid = self.quotations[self.quotations['qid'] == int(qid)].values[0][1]
+        deposit = self.halls[self.halls['hid'] == int(hid)].values[0][4]
+        return deposit
+
+    def generate_receipt(self, payment):
+        pid = payment.get_transaction_id()
+        p_date = payment.get_transaction_date()
+        cid = payment.get_send_from()
+        oid = payment.get_send_to()
+        amount = payment.get_amount()
+        cus_name = self.users[self.users['uid'] == int(cid)].values[0][0]
+        owner_name = self.users[self.users['uid'] == int(oid)].values[0][0]
+        receipt = 'Transaction ID: ' + str(pid) + '\n' +\
+                  'Transaction time: ' + str(p_date) + '\n' +\
+                  'Send from: ' + str(cus_name) + '(id=' + str(cid) + ')\n' +\
+                  'Send to: ' + str(owner_name) + '(id=' + str(oid) + ')\n' +\
+                  'Amount: ' + str(amount)
+        return receipt
 
 
 class OwnerController(UserController):
@@ -167,6 +223,8 @@ class OwnerController(UserController):
         self.quotations.loc[self.quotations['qid'] == int(qid), 'status'] = decision
         self.quotations.loc[self.quotations['qid'] == int(qid), 'amount'] = amount
         self.quotations.to_csv('../data/quotations.csv', header=True, index=False)
+        # refresh
+        self.quotations = pd.read_csv('../data/quotations.csv')
         return True
 
 
