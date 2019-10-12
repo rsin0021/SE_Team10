@@ -2,14 +2,11 @@
 
 # Parent Class User
 class User:
-    def __init__(self, user_name, user_email, user_id, password, address, phone, acount_type):
+    def __init__(self, user_name, user_email, user_id, password):
         self.user_name = user_name
         self.user_email = user_email
         self.user_id = user_id
         self.password = password
-        self.address = address
-        self.phone = phone
-        self.account_type = acount_type
 
     def set_user_name(self, user_name):
         self.user_name = user_name
@@ -35,33 +32,14 @@ class User:
     def get_password(self):
         return self.password
 
-    def set_address(self, address):
-        self.address = address
-
-    def get_address(self):
-        return self.address
-
-    def set_phone(self, phone):
-        self.phone = phone
-
-    def get_phone(self):
-        return self.phone
-
-    def set_account_type(self, account_type):
-        self.account_type = account_type
-
-    def get_account_type(self):
-        return self.account_type
-
     def __str__(self):
         return 'User ID: ' + str(self.user_id) + '\n' + \
                'User Name: ' + str(self.user_name) + '\n' + \
                'E-mail: ' + str(self.user_email) + '\n' + \
-               'Password: ' + str(self.password) + '\n' + \
-               'Address: ' + str(self.address) + '\n' + \
-               'Phone: ' + str(self.phone) + '\n' + \
-               'Account Type: ' + str(self.account_type)
-            # Child Class Customer
+               'Password: ' + str(self.password)
+
+
+# Child Class Customer
 class Customer(User):
     def __init__(self, cust_name, cust_email, cust_id, password, cust_address, cust_phone, login_as='Customer'):
         super().__init__(cust_name, cust_email, cust_id, password)
@@ -282,7 +260,38 @@ class Payment:
         self.amount = amount
 
 
+class Quotation:
+    def __init__(self, qid, hall_id, hall_name, user_id, user_email, guests):
+        self.qid = qid
+        self.hall_id = hall_id
+        self.hall_name = hall_name
+        self.user_id = user_id   #This is for owner to whom the hall belongs
+        self.user_email = user_email #This is customers email that requests quotation
+        self.guests = guests
 
+    def set_qid(self, qid):
+        self.qid = qid
+
+    def get_qid(self):
+        return self.qid
+
+    def set_hall_id(self, hall_id):
+        self.hall_id = hall_id
+
+    def get_hall_id(self):
+        return self.hall_id
+
+    def set_user_id(self, user_id):
+
+        self.user_id = user_id
+    def get_user_id(self):
+        return self.user_id
+
+    def set_guests(self, guests):
+        self.guests = guests
+
+    def get_guests(self):
+        return self.guests
 
 
 

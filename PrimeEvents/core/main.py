@@ -1,9 +1,16 @@
-from core.boundaries import UserInterface, Page
+from core.boundaries import UserInterface
 
 prime_events = UserInterface()
 
-user = prime_events.login_boundary()
-next_boundary = prime_events.register_boundary()
+while True:
+    option = prime_events.login_or_rigster_boundary()
+    if option == 'L':
+        user = prime_events.login_boundary()
+        break
+    elif option == 'R':
+        prime_events.register_boundary()
+
+
 prime_events.view_hall_boundary()
 prime_events.book_hall_boundary(user)
 

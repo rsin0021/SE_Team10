@@ -187,6 +187,15 @@ class UserInterface:
         self.cus_controller = CusController()
         self.admin_controller = AdminController()
 
+    def login_or_rigster_boundary(self):
+        welcome_page = Page(title='Welcome to Prime Events',
+                            contents=['We are the best hall booking app in FIT5136!'],
+                            options={'R': 'register', 'L': 'login'})
+        print(welcome_page)
+        scanner = Scanner()
+        option = scanner.accept_option(welcome_page.getOptions())
+        return option
+
     def register_boundary(self):
         # setup the register page
         register_page = Page(title='Register',
@@ -231,16 +240,20 @@ class UserInterface:
         scanner = Scanner()
         email = scanner.accept_normal_attributes('email')
         password = scanner.accept_normal_attributes('password')
-        user = self.user_controller.check_login(email,password)
-        if user == False:
+        state, user = self.user_controller.check_login(email, password)
+        if not state:
             login_fail_page = Page(title='Login Failed',
-                                   options={'Any Key' : 'go to login/register page'})
+                                   options={'Any Key': 'go to login/register page'})
             print(login_fail_page)
+            scanner.accept_any_key()
+            option = 'L'
         else:
-            print('login successfully')
-            return user
+            login_ok_page = Page(title='Login Succeeded', options={'Any Key': 'go to home page'})
+            print(login_ok_page)
+            scanner.accept_any_key()
+            option = 'H'
 
-
+        return option, user
 
     def view_hall_boundary(self):
         scanner = Scanner()
