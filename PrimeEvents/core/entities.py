@@ -261,13 +261,23 @@ class Payment:
 
 
 class Quotation:
-    def __init__(self, qid, hall_id, hall_name, user_id, user_email, guests):
+    def __init__(self, qid, hall_id, hall_name, cus_id, guests, s_date, e_date, amount='Unknown', status='pending'):
         self.qid = qid
         self.hall_id = hall_id
         self.hall_name = hall_name
-        self.user_id = user_id   #This is for owner to whom the hall belongs
-        self.user_email = user_email #This is customers email that requests quotation
+        self.user_id = cus_id
         self.guests = guests
+        self.s_date = s_date
+        self.e_date = e_date
+        self.amount = amount
+        self.status = status
+
+    def __str__(self):
+        return 'Hall Name: ' + str(self.hall_name) + '\n' +\
+               'Book from ' + str(self.s_date) +\
+               ' To ' + str(self.e_date) + '\n' +\
+               'Quotation status:' + str(self.status) + '\n' +\
+               'Amount: ' + str(self.amount)
 
     def set_qid(self, qid):
         self.qid = qid
@@ -282,8 +292,8 @@ class Quotation:
         return self.hall_id
 
     def set_user_id(self, user_id):
-
         self.user_id = user_id
+
     def get_user_id(self):
         return self.user_id
 
@@ -293,10 +303,27 @@ class Quotation:
     def get_guests(self):
         return self.guests
 
+    def set_amount(self, amount):
+        self.amount = amount
 
+    def get_amount(self):
+        return self.amount
 
+    def set_status(self, status):
+        self.status = status
 
+    def get_status(self):
+        return self.status
 
+    def get_s_date(self):
+        return self.s_date
 
+    def get_e_date(self):
+        return self.e_date
 
+    def set_s_date(self, s_date):
+        self.s_date = s_date
+
+    def set_e_date(self, e_date):
+        self.e_date = e_date
 

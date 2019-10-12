@@ -1,5 +1,5 @@
 import pandas as pd
-from core.entities import Customer, Owner, Admin, Hall, Payment, Booking, User
+from core.entities import Customer, Owner, Admin, Hall, Payment, Booking, User, Quotation
 
 
 class UserController:
@@ -99,12 +99,12 @@ class UserController:
 class CusController(UserController):
 
     def add_booking(self, bid, hid, uid, b_date, s_date, e_date, amount, pid):
+        booking = Booking(bid, hid, uid, b_date, s_date, e_date, amount, pid)
         data = {'bid': [bid], 'hid': [hid], 'uid': [uid], 'b_date': [b_date],
-                's_date': [s_date], 'e_date': [e_date], 'amount': [amount], 'pid': [pid]}
+                's_date': [s_date], 'e_date': [e_date], 'amount': [amount], 'pid': [pid], 'status': [booking.get_status()]}
         booking_row = pd.DataFrame(data)
         booking_row.to_csv('../data/bookings.csv', mode='a', header=False, index=False)
         self.bookings = pd.read_csv('../data/bookings.csv')
-        booking = Booking(bid, hid, uid, b_date, s_date, e_date, amount, pid)
         return True, booking
 
     def delete_booking(self, bid):
@@ -121,6 +121,24 @@ class CusController(UserController):
 
     def check_payment(self):
         pass
+
+    def add_quotation(self, hid, s_date, e_date, num_of_ges, cus_id):
+        qid = self.generate_id('quotation')
+        hall_name = (self.halls[self.halls['Hall_ID'] == 1])['Hall_name'].values[0]
+
+        quo = Quotation(self, qid, hid, hall_name, cus_id, num_of_ges, s_date, e_date)
+
+        data = {'qid': [qid], 'hall_id': [hid], 'hall_name': [hall_name], 'cus_id': [cus_id],
+                'guests': [num_of_ges], 's_date': [s_date], 'e_date': [e_date],
+                'amount': [quo.get_amount()], 'status': [quo.get_status()]}
+        quotation_row = pd.DataFrame(data)
+        quotation_row.to_csv('../data/quotations.csv', mode='a', header=False, index=False)
+        # refresh
+        self.quotations = pd.read_csv('../data/quotations.csv')
+        return True, quo
+
+    def check_hall_exist(self, hid):
+        return not self.halls[self.halls['Hall_ID'] == int(hid)].size == 0
 
 
 class OwnerController(UserController):

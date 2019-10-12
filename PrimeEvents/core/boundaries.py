@@ -143,6 +143,17 @@ class Scanner:
                 break
         return user_input
 
+    def accept_integer(self, name):
+        self.massage = 'Enter the ' + name + ': '
+        while True:
+            user_input = str(input(self.massage))
+
+            if user_input.isdigit():
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+        return user_input
+
     def accept_phone(self):
         self.massage = 'Enter the phone: '
         while True:
@@ -255,6 +266,32 @@ class UserInterface:
 
         return option, user
 
+    def request_quotation_boundary(self, user):
+
+        scanner = Scanner()
+
+        while True:
+            hid = scanner.accept_normal_attributes('Hall ID')
+            # check if the hall exists
+            exists = self.cus_controller.check_hall_exist(hid)
+            if exists:
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+
+        s_date, e_date = scanner.accept_book_date()
+        num_of_ges = scanner.accept_integer('number of guest')
+        cus_id = user.get_user_id()
+
+        # call controller
+        state, quo = self.cus_controller.add_quotation(hid, s_date, e_date, num_of_ges, cus_id)
+
+        send_page = Page(title='Quotation sand successfully', contents=[quo],
+                         options={'Any Key': 'back to search hall page'})
+        print(send_page)
+        scanner.accept_any_key()
+        return 'S'
+
     def view_hall_boundary(self):
         scanner = Scanner()
         # Get a halls stored in a list
@@ -295,9 +332,9 @@ class UserInterface:
             book_page = Page(title='Booking Page', contents=[booking],
                              options={'C': 'confirm', 'G': 'give up'})
 
-        print(book_page)
-        option = scanner.accept_option(book_page.getOptions())
-        if option == 'G':
-            # if give up, delete the booking
-            self.cus_controller.delete_booking(booking.get_book_id())
-        return option
+            print(book_page)
+            option = scanner.accept_option(book_page.getOptions())
+            if option == 'G':
+                # if give up, delete the booking
+                self.cus_controller.delete_booking(booking.get_book_id())
+                return option
