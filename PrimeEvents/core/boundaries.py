@@ -238,6 +238,16 @@ class Scanner:
                 print('Invalid input!! TRY AGAIN')
         return user_input
 
+    def accept_cus_booking_id(self, booking_list):
+        self.massage = 'Enter the Booking ID: '
+        while True:
+            user_input = str(input(self.massage))
+            if user_input in [str(booking.get_book_id()) for booking in booking_list]:
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+        return user_input
+
     def accept_bankcard_num(self):
         self.massage = 'Enter Bank Card Num(12 digits): '
         while True:
@@ -279,15 +289,17 @@ class UserInterface:
         self.cus_controller = CusController()
         self.admin_controller = AdminController()
 
+    # W
     def login_or_rigster_boundary(self):
         welcome_page = Page(title='Welcome to Prime Events',
                             contents=['We are the best hall booking app in FIT5136!'],
-                            options={'R': 'register', 'L': 'login'})
+                            options={'R': 'register', 'L': 'login', 'C': 'close the program'})
         print(welcome_page)
         scanner = Scanner()
         option = scanner.accept_option(welcome_page.getOptions())
         return option
 
+    # R
     def register_boundary(self):
         # setup the register page
         register_page = Page(title='Register',
@@ -300,7 +312,7 @@ class UserInterface:
         # get the attributes from user
         scanner = Scanner()
         register_type = scanner.accept_register_type()
-        uid = scanner.accept_normal_attributes('id')
+        # uid = scanner.accept_normal_attributes('id')
         name = scanner.accept_normal_attributes('name')
         email = scanner.accept_normal_attributes('email')
         password = scanner.accept_normal_attributes('password')
@@ -311,7 +323,7 @@ class UserInterface:
             phone = scanner.accept_phone()
 
         # pass the attributes to controller to do the register process
-        state, user = self.user_controller.register(register_type, uid, name, email, password, address, phone)
+        state, user = self.user_controller.register(register_type, name, email, password, address, phone)
 
         # If register successfully display the information of the account
         if state:
@@ -326,9 +338,10 @@ class UserInterface:
             print(not_ok_page)
         scanner.accept_any_key()
         # To tell main function which boundary should called next
-        return 'L'
+        return 'W'
 
     # testing
+    # L
     def login_boundary(self):
         scanner = Scanner()
         email = scanner.accept_normal_attributes('email')
@@ -340,7 +353,7 @@ class UserInterface:
                                    options={'Any Key': 'go to login/register page'})
             print(login_fail_page)
             scanner.accept_any_key()
-            option = 'L'
+            option = 'W'
         else:
             login_ok_page = Page(title='Login', contents=['Succeeded'], options={'Any Key': 'go to home page'})
             print(login_ok_page)
@@ -349,12 +362,15 @@ class UserInterface:
 
         return option, user
 
+    # Q
     def request_quotation_boundary(self, user):
 
         scanner = Scanner()
 
         while True:
-            hid = scanner.accept_normal_attributes('Hall ID')
+            hid = scanner.accept_normal_attributes('Hall ID(enter -1 to view hall page)')
+            if hid == '-1':
+                return 'V'
             # check if the hall exists
             exists = self.cus_controller.check_hall_exist(hid)
             if exists:
@@ -375,6 +391,7 @@ class UserInterface:
         scanner.accept_any_key()
         return 'V'
 
+    # V
     def view_hall_boundary(self):
         scanner = Scanner()
         # Get a halls stored in a list
@@ -394,6 +411,7 @@ class UserInterface:
             option = scanner.accept_option(view_page.getOptions())
         return option
 
+    # B
     def book_hall_boundary(self, user):
         scanner = Scanner()
         state, quo_list = self.cus_controller.get_approved_quotations(user.get_user_id())
@@ -402,11 +420,12 @@ class UserInterface:
                 quo_page = Page(title='Your Approved Quotations', contents=quo_list,
                                 options={'C': 'choose', 'B': 'back to view hall page'})
                 print(quo_page)
+                option = scanner.accept_option(quo_page.getOptions())
             else:
                 quo_page = Page(title='Your Approved Quotations', contents=['You have no approved quotation'],
                                 options={'Any Key': 'back to view hall page'})
                 print(quo_page)
-            option = scanner.accept_option(quo_page.getOptions())
+                option = scanner.accept_any_key()
             # first choose which hall to book
             if option == 'C':
                 qid = scanner.accept_cus_quotation_id(quo_list)
@@ -456,13 +475,23 @@ class UserInterface:
         else:
             return 'G', None
 
+    # RQ
     def response_quotation_boundary(self, owner):
         scanner = Scanner()
         state, quo_list = self.owner_controller.get_quotations_by_oid(owner.get_user_id())
         quo_page = Page(title='Quotation Requests', contents=quo_list,
-                        options={'R': 'response a quotation', 'H': 'go to home page'})
+                        options={'Q': 'response a quotation', 'H': 'go to home page'})
         print(quo_page)
         option = scanner.accept_option(quo_page.getOptions())
+        while True:
+            if option == 'P':
+                quo_page.pre_page()
+            elif option == 'N':
+                quo_page.next_page()
+            else:
+                break
+            print(quo_page)
+            option = scanner.accept_option(quo_page.getOptions())
         if option == 'H':
             return option
         else:
@@ -483,5 +512,120 @@ class UserInterface:
                 print(error_page)
             return 'Q'
 
+    # S
+    def search_hall_boundary(self):
+        scanner = Scanner()
+        keyword = scanner.accept_normal_attributes('keyword to search')
+        hall_list = self.cus_controller.get_halls_list()
+        result = []
+        for hall in hall_list:
+            if keyword in hall.get_hall_description() or keyword in hall.get_hall_name():
+                result.append(hall)
+        if len(result) == 0:
+            result = ['No halls found']
+        result_page = Page(title='Search Result', contents=result,
+                           options={'Q': 'Request quotation', 'B': 'Book hall',
+                                    'H': 'to home page'})
+        print(result_page)
+        option = scanner.accept_option(result_page.getOptions())
+        while True:
+            if option == 'P':
+                result_page.pre_page()
+            elif option == 'N':
+                result_page.next_page()
+            else:
+                break
+            print(result_page)
+            option = scanner.accept_option(result_page.getOptions())
+        return option
 
+    # H
+    def home_page_boundary(self, user):
+        scanner = Scanner()
+        if user.get_login_as() == 'Customer':
+            options = {'V': 'View hall',
+                       'S': 'Search hall',
+                       'B': 'Book hall',
+                       'Q': 'Request quotation',
+                       'M': 'Manage booking',
+                       'W': 'Logout'}
+            home_page1 = Page(title='Home', contents=['Hi! What do you want?'], options=options)
+            print(home_page1)
+            option = scanner.accept_option(home_page1.getOptions())
+        elif user.get_login_as() == 'Owner':
+            options = {'MH': 'Manage hall',
+                       'M': 'Manage booking',
+                       'RQ': 'Response quotation',
+                       'W': 'Logout'}
+            home_page1 = Page(title='Home', contents=['Hi! What do you want?'], options=options)
+            print(home_page1)
+            option = scanner.accept_option(home_page1.getOptions())
+        elif user.get_login_as() == 'Administrator':
+            options = {'U': 'Manage user',
+                       'D': 'Manage discount',
+                       'W': 'Logout'}
+            home_page1 = Page(title='Home', contents=['Hi! What do you want?'], options=options)
+            print(home_page1)
+            option = scanner.accept_option(home_page1.getOptions())
 
+        return option
+
+    # M
+    def cus_manage_booking_boundary(self, user):
+        while True:
+            scanner = Scanner()
+            hall_list = self.cus_controller.get_bookings_by_id(user.get_user_id())
+            if len(hall_list) > 0:
+                contents = hall_list
+                options = {'D': 'change date of a booking', 'C': 'cancel a booking', 'H': 'home page'}
+            else:
+                contents = ['You don\'t have booking']
+                options = {'H': 'home page'}
+            manage_booking_page = Page(title='Manage Booking', contents=contents,
+                                       options=options)
+            print(manage_booking_page)
+            option = scanner.accept_option(manage_booking_page.getOptions())
+            if option == 'H':
+                return option
+            while True:
+                if option == 'P':
+                    manage_booking_page.pre_page()
+                elif option == 'N':
+                    manage_booking_page.next_page()
+                else:
+                    break
+                print(manage_booking_page)
+                option = scanner.accept_option(manage_booking_page.getOptions())
+            if option == 'D':
+                bid = scanner.accept_cus_booking_id(hall_list)
+                s_date, e_date = scanner.accept_valid_date()
+                self.cus_controller.update_booking_date(bid, s_date, e_date)
+            elif options == 'C':
+                bid = scanner.accept_cus_booking_id(hall_list)
+                self.cus_controller.cancel_booking(bid)
+            else:
+                return 'H'
+
+    def close_boundary(self):
+        return 'C'
+
+    def manage_hall_boundary(self):
+        page = Page(title='Manage Hall', contents=['function being implemented...'],
+                    options={'H': 'go to home page'})
+        print(page)
+        option = Scanner().accept_option(page.getOptions())
+        return option
+
+    def manage_user_boundary(self):
+        page = Page(title='Manage User', contents=['function being implemented...'],
+                    options={'H': 'go to home page'})
+        print(page)
+        option = Scanner().accept_option(page.getOptions())
+        return option
+
+    def manage_discount_boundary(self):
+        page = Page(title='Manage Discount', contents=['function being implemented...'],
+                    options={'H': 'go to home page'})
+        print(page)
+        option = Scanner().accept_option(page.getOptions())
+        return option

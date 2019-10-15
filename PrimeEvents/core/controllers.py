@@ -1,6 +1,6 @@
 import pandas as pd
 from datetime import datetime
-from core.entities import Customer, Owner, Admin, Hall, Payment, Booking, User, Quotation
+from core.entities import Customer, Owner, Admin, Hall, Payment, Booking, Quotation
 
 
 class UserController:
@@ -13,8 +13,8 @@ class UserController:
         self.reviews = pd.read_csv('../data/reviews.csv')
         self.quotations = pd.read_csv('../data/quotations.csv')
 
-    def register(self, register_type, uid, name, email, password, address='NA', phone='NA'):
-
+    def register(self, register_type, name, email, password, address='NA', phone='NA'):
+        uid = self.generate_id('user')
         # dictionary of lists
         data = {'name': [name], 'email': [email], 'uid': [uid], 'password': [password],
                 'address': [address], 'phone': [phone], 'account_type': [register_type]}
@@ -27,6 +27,7 @@ class UserController:
 
         # Refresh the data of the controller
         self.users = pd.read_csv('../data/users.csv')
+
 
         # If register successfully
         if register_type == 'Administrator':
@@ -46,7 +47,7 @@ class UserController:
             address = self.users.loc[i][4]
             phone = self.users.loc[i][5]
             account_type = self.users.loc[i][6]
-            if enter_email == email and enter_password == password:
+            if str(enter_email) == str(email) and str(enter_password) == str(password):
                 if account_type == 'Administrator':
                     user = Admin(name, email, userid, password)
                     return True, user
@@ -98,6 +99,18 @@ class UserController:
 
 
 class CusController(UserController):
+    def update_booking_date(self, bid, s_date, e_date):
+        self.bookings.loc[self.bookings['bid'] == int(bid), 's_date'] = s_date
+        self.bookings.loc[self.bookings['bid'] == int(bid), 'e_date'] = e_date
+        self.bookings.to_csv('../data/bookings.csv', mode='w', header=True, index=False)
+        self.bookings = pd.read_csv('../data/bookings.csv')
+
+    def get_bookings_by_id(self, cid):
+        hall_list = []
+        for row in self.bookings[self.bookings['uid'] == int(cid)].values:
+            hall = Hall(row[0], row[1], row[2], row[3], row[4], row[5])
+            hall_list.append(hall)
+        return hall_list
 
     def add_booking(self, payment, qid):
         bid = self.generate_id('booking')
@@ -120,8 +133,10 @@ class CusController(UserController):
         self.bookings = pd.read_csv('../data/bookings.csv')
         return True, booking
 
-    def delete_booking(self, bid):
-        pass
+    def cancel_booking(self, bid):
+        index = self.bookings[self.bookings['bid'] == int(bid)].index.values.astype(int)[0]
+        self.bookings = self.bookings.drop([index])
+        self.bookings.to_csv('../data/bookings.csv', mode='w', header=True, index=False)
 
     def add_payment(self, cid, qid):
         # generate payment id
@@ -146,9 +161,6 @@ class CusController(UserController):
         # refresh
         self.payments = pd.read_csv('../data/payments.csv')
         return True, payment
-
-    def check_payment(self):
-        pass
 
     def add_quotation(self, hid, s_date, e_date, num_of_ges, cus_id):
         qid = self.generate_id('quotation')
@@ -226,6 +238,11 @@ class OwnerController(UserController):
         # refresh
         self.quotations = pd.read_csv('../data/quotations.csv')
         return True
+
+    def delete_booking(self, bid):
+        index = self.bookings[self.bookings['bid'] == int(bid)].index.values.astype(int)[0]
+        self.bookings = self.bookings.drop([index])
+        self.bookings.to_csv('../data/bookings.csv', mode='w', header=True, index=False)
 
 
 class AdminController(UserController):

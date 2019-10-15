@@ -1,3 +1,1001 @@
 Hall_name,hid,oid,Hall_description,Deposit,Discount
-Hall A,1,15,A,100,1
-Hall B,2,15,B,200,1
+Bluestem Hall,1,27,203 Pennsylvania Junction,864.09,-0.76
+Bowman Hall,2,44,82 Harper Plaza,976.44,-0.5
+Lunder Hall,3,23,174 Carberry Street,1214.14,-0.2
+Tennyson Hall,4,69,620 Continental Point,773.44,-0.4
+Mcguire Hall,5,98,496 Ruskin Plaza,1749.74,-0.18
+American Hall,6,8,3 Hintze Center,1630.0,-0.55
+Lakeland Hall,7,29,8 Artisan Way,1384.98,-0.1
+Delaware Hall,8,83,02029 Surrey Pass,1220.14,-0.38
+Anzinger Hall,9,42,5 8th Center,1652.27,-0.59
+Harper Hall,10,45,54254 Eagle Crest Trail,538.35,-0.42
+New Castle Hall,11,4,7481 Fairview Alley,947.41,-0.57
+Anderson Hall,12,56,42996 Dapin Road,479.11,-0.36
+Marcy Hall,13,96,4 3rd Junction,864.43,-0.68
+Nancy Hall,14,83,0014 Lighthouse Bay Circle,533.29,-0.17
+Myrtle Hall,15,37,94504 Del Mar Crossing,1480.65,-1.0
+Eliot Hall,16,57,42 Cambridge Road,909.27,-0.86
+Sommers Hall,17,63,56 Pankratz Road,1055.05,-0.1
+Rowland Hall,18,63,7146 Marcy Court,706.61,-0.33
+Corben Hall,19,39,2 Westridge Plaza,533.03,-0.05
+Butterfield Hall,20,91,77 Harper Terrace,436.31,-0.02
+Fremont Hall,21,32,2345 Sundown Avenue,1572.82,-0.9
+Talisman Hall,22,38,15 Tennyson Plaza,426.67,-0.03
+Donald Hall,23,82,362 Hagan Trail,1730.16,-0.88
+Montana Hall,24,2,971 Butternut Parkway,1809.03,-0.78
+Vernon Hall,25,30,17455 Briar Crest Junction,1445.45,-0.19
+Gina Hall,26,65,73142 Carpenter Junction,1604.03,-0.57
+Sachtjen Hall,27,90,784 Macpherson Plaza,775.9,-0.5
+Summerview Hall,28,73,75256 Badeau Parkway,866.09,-0.51
+Old Shore Hall,29,4,1 Truax Plaza,136.93,-0.64
+Fair Oaks Hall,30,67,1 Towne Street,1647.65,-0.32
+Old Shore Hall,31,83,509 Cambridge Road,214.79,-0.73
+Cambridge Hall,32,65,5819 Corscot Crossing,1859.96,-0.98
+Nova Hall,33,84,0595 Union Street,1544.81,-0.76
+Schiller Hall,34,20,92661 Brentwood Terrace,241.87,-0.44
+Vernon Hall,35,79,28156 Mockingbird Road,1694.09,-0.27
+Eliot Hall,36,81,8 Fulton Parkway,1539.75,-0.59
+Heath Hall,37,13,9 Carberry Circle,550.06,-0.96
+Walton Hall,38,30,41285 Swallow Avenue,711.86,-0.22
+Laurel Hall,39,17,5 Warner Drive,783.41,-0.84
+Lerdahl Hall,40,58,8 Amoth Court,1654.93,-0.18
+Claremont Hall,41,12,94 Welch Drive,1071.43,-0.15
+Golden Leaf Hall,42,50,344 Maywood Lane,1764.63,-0.8
+Annamark Hall,43,23,8284 Fair Oaks Court,1464.3,-0.88
+Elgar Hall,44,72,15581 Victoria Terrace,237.43,-0.78
+Division Hall,45,56,62 Tennyson Crossing,833.18,-0.19
+Butternut Hall,46,99,17552 Melrose Point,803.65,-0.18
+Anthes Hall,47,66,5 Scofield Hill,1813.3,-0.89
+Northwestern Hall,48,63,59 Warrior Street,220.22,-0.2
+Golden Leaf Hall,49,95,58007 Pleasure Crossing,174.33,-0.41
+Brentwood Hall,50,24,2737 Anzinger Junction,878.91,-0.1
+Lotheville Hall,51,16,42 Jana Trail,1227.16,-0.6
+Corry Hall,52,19,7161 Stuart Road,1983.69,-0.98
+Eastwood Hall,53,87,53565 Sutherland Trail,1578.5,-0.72
+Atwood Hall,54,48,7 Roth Lane,1753.27,-0.54
+Johnson Hall,55,40,2 Hanover Parkway,1315.25,-0.09
+Westend Hall,56,11,8 Oak Avenue,1618.51,-0.97
+Maple Hall,57,30,42 Dakota Parkway,343.95,-0.22
+Jenifer Hall,58,74,3257 Pine View Junction,1046.47,-0.51
+Debs Hall,59,13,55 Aberg Center,342.17,-0.31
+Lakewood Hall,60,84,437 Raven Street,1603.89,-0.34
+Kings Hall,61,95,403 Sommers Lane,1438.21,-0.56
+Mockingbird Hall,62,73,00 Kim Way,1694.58,-0.28
+Green Ridge Hall,63,55,58143 Pierstorff Alley,346.87,-0.43
+Elgar Hall,64,76,956 Daystar Court,309.97,-0.95
+Scoville Hall,65,47,21 Becker Court,1664.95,-0.27
+Acker Hall,66,97,64601 Hoffman Parkway,838.46,-0.37
+Walton Hall,67,52,59076 Fuller Circle,1071.54,-0.13
+Iowa Hall,68,18,241 Main Trail,272.01,-0.68
+Dawn Hall,69,29,579 Pleasure Hill,749.11,-0.33
+John Wall Hall,70,44,7 Bunker Hill Junction,639.65,-0.89
+Stang Hall,71,20,25 Evergreen Avenue,1395.48,-0.42
+Stuart Hall,72,37,4 Prairieview Terrace,790.53,-0.51
+Glacier Hill Hall,73,13,9527 Corben Place,961.07,-0.01
+Barby Hall,74,36,42 Katie Place,1600.71,-0.55
+Lukken Hall,75,46,691 Mesta Trail,520.45,-0.77
+Cody Hall,76,37,5184 Glendale Trail,101.49,-0.26
+Northport Hall,77,65,6239 Dexter Way,1063.42,-0.23
+Mayfield Hall,78,81,8232 1st Street,624.16,-0.04
+Texas Hall,79,76,02923 Autumn Leaf Court,968.91,-0.3
+Meadow Vale Hall,80,95,5114 Grover Way,1545.13,-0.02
+Jana Hall,81,99,2 Springs Place,941.26,-0.02
+Comanche Hall,82,57,529 Scoville Center,1540.65,-0.36
+Old Gate Hall,83,61,62173 Blaine Alley,390.01,-0.92
+Browning Hall,84,69,66 Golf Park,807.91,-0.7
+Hanson Hall,85,61,57965 Carberry Lane,1019.73,-0.97
+Village Green Hall,86,53,0 Carpenter Drive,280.91,-0.57
+Lyons Hall,87,58,2013 La Follette Alley,968.01,-0.47
+International Hall,88,74,23 Menomonie Place,1015.31,-0.47
+Red Cloud Hall,89,52,3499 Dahle Parkway,970.79,-0.89
+Schlimgen Hall,90,7,91 Arrowood Terrace,863.07,-0.36
+Surrey Hall,91,86,18 Londonderry Trail,750.01,-0.75
+Sommers Hall,92,5,90 5th Drive,1159.47,-0.07
+Atwood Hall,93,89,1560 Packers Center,1669.92,-0.03
+Bunting Hall,94,1,927 Hudson Hill,140.85,-0.41
+Cody Hall,95,49,0989 Lakewood Place,1585.62,-0.57
+Tennyson Hall,96,49,482 Barnett Terrace,147.12,-0.98
+Dennis Hall,97,6,2 Tony Trail,1229.69,-0.4
+Parkside Hall,98,54,768 Ridgeway Road,656.73,-0.39
+Schiller Hall,99,4,1145 Sachtjen Plaza,468.81,-0.65
+Redwing Hall,100,7,11128 Crownhardt Terrace,1532.65,-0.8
+Melrose Hall,101,2,092 Lillian Drive,959.5,-0.39
+Lindbergh Hall,102,72,47521 Grasskamp Park,425.71,-0.19
+Ridge Oak Hall,103,96,413 Superior Street,194.61,-0.66
+Goodland Hall,104,33,87 Goodland Pass,1800.67,-0.28
+Valley Edge Hall,105,35,5 Cascade Court,269.28,-0.48
+Tennessee Hall,106,81,46 Londonderry Way,767.98,-0.31
+Lukken Hall,107,20,21 Vermont Way,1587.47,-0.03
+Artisan Hall,108,66,649 Meadow Ridge Park,478.12,-0.67
+Loftsgordon Hall,109,12,46678 Loftsgordon Street,346.81,-0.24
+Lakewood Gardens Hall,110,35,90033 Evergreen Hill,618.07,-0.08
+Anderson Hall,111,100,613 Crest Line Court,1954.01,-0.1
+Bay Hall,112,52,1653 Golden Leaf Parkway,738.68,-0.57
+Miller Hall,113,85,9941 Cottonwood Road,1419.11,-0.92
+Heath Hall,114,41,0395 Nancy Lane,1081.34,-0.47
+Bartillon Hall,115,7,8 Miller Plaza,1879.31,-0.49
+Riverside Hall,116,85,9634 Northwestern Road,1969.4,-0.77
+Cardinal Hall,117,44,23 North Pass,820.15,-0.42
+Macpherson Hall,118,86,66 Sauthoff Parkway,1717.62,-0.96
+Katie Hall,119,69,6981 Oak Lane,295.82,-0.72
+Jenifer Hall,120,76,6780 Caliangt Court,1014.75,-0.76
+Arizona Hall,121,29,19 Vahlen Alley,234.28,-0.79
+Graedel Hall,122,91,9034 Fordem Junction,490.04,-0.01
+Park Meadow Hall,123,48,3 Rutledge Park,855.15,-0.01
+Algoma Hall,124,77,8419 3rd Circle,1466.24,-0.22
+Merry Hall,125,17,4791 Monterey Junction,1798.07,-0.44
+Westport Hall,126,44,6 Pawling Road,1760.74,-0.17
+Eggendart Hall,127,69,6 Crescent Oaks Road,1890.63,-0.3
+Chive Hall,128,98,2 Dottie Plaza,448.11,-0.03
+Canary Hall,129,94,09 Ohio Parkway,219.79,-0.18
+Lotheville Hall,130,20,79824 Helena Street,905.64,-0.1
+5th Hall,131,80,1 Cottonwood Center,555.13,-0.32
+Hermina Hall,132,90,8 Harper Pass,1157.54,-0.55
+Weeping Birch Hall,133,72,5576 Schmedeman Circle,603.13,-0.28
+Maple Wood Hall,134,54,3 Dottie Terrace,1419.53,-0.59
+East Hall,135,81,8 Monterey Way,1139.23,-0.94
+Grover Hall,136,42,0 Bartillon Street,1063.69,-0.05
+Green Ridge Hall,137,79,60468 Farwell Parkway,207.09,-0.57
+Scott Hall,138,77,1942 4th Terrace,1236.24,-0.57
+Merrick Hall,139,57,5 Jenna Lane,132.88,-0.04
+Fallview Hall,140,50,7 Sugar Avenue,187.09,-0.71
+Darwin Hall,141,46,47 Nancy Drive,1113.59,-0.19
+Schmedeman Hall,142,59,0 Sycamore Pass,1625.0,-0.49
+Westerfield Hall,143,94,27 Algoma Circle,1166.41,-0.76
+Swallow Hall,144,8,94731 Hoffman Terrace,990.05,-0.55
+Northfield Hall,145,85,12952 Golden Leaf Crossing,1097.61,-0.53
+Westridge Hall,146,84,4 Myrtle Way,944.48,-0.2
+Charing Cross Hall,147,44,53276 Prentice Lane,1697.94,-0.86
+Helena Hall,148,82,5834 Homewood Lane,1082.26,-0.86
+Heffernan Hall,149,6,9096 Mccormick Circle,1852.79,-0.19
+Gateway Hall,150,20,37083 Nevada Point,1539.37,-0.56
+Holmberg Hall,151,82,92150 Browning Plaza,1783.02,-0.22
+American Hall,152,30,3777 Mendota Junction,980.14,-0.63
+Onsgard Hall,153,78,74360 Sunfield Hill,1241.25,-0.73
+Pond Hall,154,72,3676 Steensland Lane,851.27,-0.92
+Village Green Hall,155,68,3 Lukken Parkway,1200.49,-0.35
+Dennis Hall,156,48,47186 Iowa Junction,1939.4,-0.33
+Haas Hall,157,99,15451 Mariners Cove Circle,1026.53,-0.44
+Ronald Regan Hall,158,77,88 Scofield Parkway,1278.43,-0.46
+Carioca Hall,159,2,793 Victoria Crossing,118.88,-0.59
+Birchwood Hall,160,86,01862 Marcy Center,108.08,-0.03
+5th Hall,161,87,125 Miller Lane,1724.61,-0.62
+Chinook Hall,162,90,12895 Little Fleur Park,337.93,-0.7
+Lyons Hall,163,43,2518 Lake View Point,318.92,-0.89
+Nevada Hall,164,37,3 Veith Junction,697.27,-0.0
+Petterle Hall,165,77,1 Oriole Drive,1005.86,-0.68
+Holmberg Hall,166,75,45656 Linden Drive,1316.43,-0.47
+Luster Hall,167,26,67134 Melrose Parkway,1704.14,-0.03
+Boyd Hall,168,8,37 Holy Cross Alley,1105.88,-0.1
+Crownhardt Hall,169,38,25881 Granby Point,792.87,-0.04
+3rd Hall,170,72,1 4th Road,785.03,-0.94
+International Hall,171,11,93559 Eliot Trail,999.99,-0.45
+Meadow Valley Hall,172,31,175 Stang Plaza,1067.63,-0.99
+Continental Hall,173,10,7414 Village Green Alley,1010.43,-0.56
+Moland Hall,174,85,15341 Nevada Parkway,1653.18,-0.81
+Redwing Hall,175,35,1 Dorton Terrace,1692.81,-0.81
+Randy Hall,176,28,2889 Elka Lane,1046.75,-0.27
+Manufacturers Hall,177,37,6215 Sage Crossing,1530.53,-0.64
+Texas Hall,178,62,47 Vahlen Hill,234.33,-0.97
+Graedel Hall,179,12,46373 Kings Road,1127.17,-0.52
+Twin Pines Hall,180,20,10 Sutteridge Lane,1285.71,-0.04
+Mcguire Hall,181,57,56 Meadow Ridge Hill,1106.99,-0.95
+Anderson Hall,182,15,23726 Di Loreto Alley,404.63,-0.01
+Laurel Hall,183,65,8 Debra Avenue,296.85,-0.51
+Fieldstone Hall,184,89,51810 Anhalt Road,255.49,-0.3
+Ruskin Hall,185,15,7 Eagle Crest Junction,608.87,-0.96
+Utah Hall,186,24,121 Vera Terrace,639.52,-0.88
+Anderson Hall,187,31,23 Karstens Avenue,738.99,-0.02
+Stang Hall,188,31,81796 Elka Drive,1599.51,-0.52
+Buell Hall,189,66,5731 Marcy Lane,1053.81,-0.14
+Rusk Hall,190,47,783 Glacier Hill Drive,613.39,-0.56
+Kedzie Hall,191,31,37608 Twin Pines Plaza,1267.19,-0.81
+Anderson Hall,192,22,66 Ilene Place,190.29,-0.26
+Sullivan Hall,193,70,40562 Eastwood Terrace,1231.39,-0.25
+Anhalt Hall,194,54,2930 Autumn Leaf Point,1185.4,-0.86
+Maywood Hall,195,40,5 Forest Street,741.47,-0.21
+Larry Hall,196,3,03682 Linden Circle,1789.34,-0.8
+Brentwood Hall,197,5,370 South Hill,1189.25,-0.62
+Basil Hall,198,15,189 Melvin Alley,1194.46,-1.0
+Washington Hall,199,34,082 Oriole Pass,1458.76,-0.26
+Oak Hall,200,9,987 Northwestern Avenue,230.26,-0.45
+Anhalt Hall,201,83,639 Hooker Court,242.04,-0.78
+South Hall,202,52,83 Spohn Park,1782.85,-0.17
+Pearson Hall,203,17,401 Dayton Lane,611.57,-0.87
+Bashford Hall,204,73,100 Dixon Place,248.58,-0.48
+Lotheville Hall,205,84,469 Randy Road,1939.71,-0.37
+Barby Hall,206,64,620 Fair Oaks Terrace,1700.41,-0.32
+Kings Hall,207,51,9 Elka Court,1128.01,-0.01
+Raven Hall,208,54,807 Daystar Street,551.92,-0.45
+Del Sol Hall,209,79,64 Clemons Parkway,130.93,-0.07
+Manitowish Hall,210,6,5 Stephen Circle,445.57,-0.84
+Waywood Hall,211,14,74 Oak Hill,139.57,-0.96
+Kenwood Hall,212,1,709 Amoth Avenue,1630.67,-0.05
+Randy Hall,213,22,9650 Maple Wood Pass,938.73,-0.52
+Drewry Hall,214,90,1 Luster Trail,522.79,-0.8
+Corscot Hall,215,58,89656 Monterey Court,371.3,-0.89
+Almo Hall,216,41,398 Bultman Hill,1173.57,-0.25
+Dwight Hall,217,47,643 Tomscot Avenue,155.89,-0.08
+Commercial Hall,218,84,9 Debs Avenue,1780.27,-0.34
+Banding Hall,219,33,548 Dennis Center,1568.22,-0.1
+Sommers Hall,220,82,647 Brickson Park Place,162.53,-0.24
+Hoepker Hall,221,92,18914 Independence Hill,682.68,-0.36
+La Follette Hall,222,10,41 Green Ridge Plaza,178.5,-0.89
+Maryland Hall,223,26,70333 Meadow Valley Center,1898.78,-0.39
+Elka Hall,224,81,6 Blaine Road,158.04,-0.16
+Dapin Hall,225,45,98852 Pond Plaza,691.66,-0.19
+Atwood Hall,226,34,6872 Crowley Alley,1178.41,-0.22
+Brentwood Hall,227,34,2 Mccormick Hill,749.06,-0.7
+Sugar Hall,228,25,45 Chive Center,435.18,-0.69
+Meadow Vale Hall,229,64,44 Fair Oaks Circle,700.26,-0.77
+Ludington Hall,230,81,5 Sycamore Park,1871.41,-0.31
+Kensington Hall,231,21,6 Evergreen Avenue,996.88,-0.79
+Algoma Hall,232,37,5706 Waywood Lane,168.38,-0.85
+Oak Hall,233,5,6 Magdeline Junction,599.82,-0.3
+Goodland Hall,234,9,46197 Daystar Trail,1518.81,-0.32
+Oakridge Hall,235,7,655 Garrison Street,1803.64,-0.65
+Clemons Hall,236,5,33020 Golf Alley,864.94,-0.62
+Sycamore Hall,237,67,265 Cascade Trail,596.95,-0.93
+Larry Hall,238,62,35041 Monica Road,1034.66,-0.1
+Vahlen Hall,239,9,70703 Menomonie Avenue,975.09,-0.99
+Loftsgordon Hall,240,83,3576 Crowley Junction,890.66,-0.53
+Bartillon Hall,241,98,8689 Lyons Alley,122.63,-0.36
+Farmco Hall,242,8,311 Ridgeway Trail,489.08,-0.72
+Rutledge Hall,243,86,0718 Macpherson Plaza,723.58,-0.04
+Raven Hall,244,22,8443 Stoughton Circle,1147.17,-0.19
+Del Mar Hall,245,65,948 Anniversary Trail,356.16,-0.75
+Magdeline Hall,246,81,06299 Lotheville Lane,566.93,-0.85
+Butternut Hall,247,5,03 Troy Way,1272.43,-0.2
+Westend Hall,248,30,1205 Spenser Park,443.16,-0.73
+Pankratz Hall,249,99,37 Dorton Alley,218.0,-0.54
+Katie Hall,250,4,423 Lunder Point,101.4,-0.97
+Granby Hall,251,67,9931 Hoffman Lane,297.51,-0.43
+Pearson Hall,252,78,49452 Karstens Avenue,1820.51,-0.98
+Cody Hall,253,38,87 Sunfield Place,1007.02,-0.23
+Crowley Hall,254,72,754 Forest Point,1821.23,-0.72
+Washington Hall,255,14,25988 Golf Street,1301.38,-0.67
+Judy Hall,256,13,667 Washington Circle,1273.28,-0.06
+Tennessee Hall,257,58,6 Waubesa Place,1129.12,-0.36
+Melby Hall,258,78,8 Drewry Alley,1921.71,-0.85
+Erie Hall,259,99,3 Gina Center,358.38,-0.61
+Rusk Hall,260,38,62 Northfield Center,443.28,-0.47
+Shasta Hall,261,72,11361 Tennyson Junction,938.93,-0.25
+High Crossing Hall,262,12,726 Luster Point,1470.27,-0.85
+Holmberg Hall,263,2,47 Lien Hill,982.21,-0.18
+Fairfield Hall,264,17,01557 Blue Bill Park Street,1985.2,-0.69
+Sloan Hall,265,13,63149 Sunnyside Lane,1644.97,-0.99
+Veith Hall,266,38,41141 Tomscot Parkway,726.21,-0.3
+Welch Hall,267,96,6 Eagle Crest Center,1077.92,-0.75
+Vernon Hall,268,90,61711 Morningstar Street,1530.8,-0.51
+Gina Hall,269,37,4 Gina Road,1998.76,-0.65
+Goodland Hall,270,48,34 Petterle Hill,582.14,-0.68
+Golf Course Hall,271,50,392 Ramsey Park,1799.32,-0.76
+High Crossing Hall,272,87,85 Anthes Terrace,1844.97,-0.14
+Upham Hall,273,47,16250 Pond Junction,1443.03,-0.51
+Lyons Hall,274,16,577 Fair Oaks Trail,1028.87,-0.58
+8th Hall,275,14,04 Mockingbird Plaza,1040.43,-0.59
+Kinsman Hall,276,14,417 Cambridge Crossing,1558.24,-0.21
+1st Hall,277,23,6211 Kim Trail,1890.8,-0.38
+Vidon Hall,278,44,2897 Hooker Court,1970.36,-0.25
+Jenna Hall,279,61,1 Fairview Junction,1644.89,-0.68
+David Hall,280,70,18006 Eliot Parkway,552.36,-0.44
+Waywood Hall,281,22,20 Duke Alley,904.38,-0.23
+Oakridge Hall,282,33,3 Debs Crossing,1336.2,-0.89
+Mccormick Hall,283,24,8 International Way,184.92,-0.57
+Mccormick Hall,284,93,08 Badeau Road,156.51,-0.28
+Dryden Hall,285,12,9309 Daystar Crossing,1482.74,-0.6
+Bluejay Hall,286,79,2355 Monument Terrace,392.91,-0.8
+2nd Hall,287,65,7 Kipling Point,909.16,-0.9
+Sheridan Hall,288,66,25685 Dwight Drive,1370.48,-0.57
+Troy Hall,289,57,23 Dwight Court,100.04,-0.25
+Moose Hall,290,31,63 Acker Trail,1534.66,-0.79
+Carpenter Hall,291,35,99 Vahlen Avenue,396.25,-0.85
+Sherman Hall,292,44,94449 Stang Junction,252.08,-0.35
+Dovetail Hall,293,42,05 Swallow Hill,1909.6,-0.25
+Green Ridge Hall,294,83,23 Packers Junction,1928.04,-0.86
+Sage Hall,295,77,3 Lakewood Crossing,1770.03,-0.02
+Pine View Hall,296,33,64985 Sutherland Lane,1725.95,-0.82
+Kingsford Hall,297,22,1 Orin Court,1683.96,-0.57
+Meadow Valley Hall,298,44,6172 Corscot Hill,645.02,-0.4
+Steensland Hall,299,38,49775 Russell Drive,1218.87,-0.05
+Pierstorff Hall,300,1,2 Brentwood Terrace,510.06,-0.31
+Harbort Hall,301,82,59 Bartelt Place,1293.03,-0.68
+Lillian Hall,302,59,526 Redwing Lane,520.88,-0.67
+Towne Hall,303,97,719 Lotheville Road,568.09,-0.48
+Kropf Hall,304,35,28849 Vahlen Drive,972.37,-0.39
+Randy Hall,305,66,63 Lighthouse Bay Alley,1104.61,-0.94
+4th Hall,306,11,74622 Hazelcrest Court,1353.96,-0.66
+Manufacturers Hall,307,37,810 Marcy Terrace,141.56,-0.13
+Riverside Hall,308,85,88 Sutherland Avenue,1203.37,-0.35
+Meadow Valley Hall,309,80,98 Magdeline Junction,521.0,-0.93
+Talisman Hall,310,1,329 Sunnyside Center,1826.1,-0.08
+Graceland Hall,311,42,6 Hooker Pass,1509.55,-0.35
+Vidon Hall,312,17,04062 Melody Alley,176.51,-0.24
+Messerschmidt Hall,313,42,36447 Cambridge Crossing,911.58,-0.27
+Fisk Hall,314,67,1161 Blue Bill Park Way,1481.89,-0.63
+Quincy Hall,315,32,8 High Crossing Crossing,546.9,-0.51
+Browning Hall,316,93,8 Arrowood Alley,1838.92,-0.15
+Wayridge Hall,317,2,350 Haas Pass,1394.03,-0.49
+Stephen Hall,318,52,96 Loeprich Center,1427.58,-0.05
+6th Hall,319,75,2407 Pleasure Terrace,1012.41,-0.28
+Kim Hall,320,58,503 Washington Circle,526.71,-0.19
+Lakeland Hall,321,38,50 Marcy Terrace,948.72,-0.07
+Harbort Hall,322,3,412 Doe Crossing Lane,661.18,-0.61
+Reindahl Hall,323,99,77548 Loftsgordon Avenue,1232.77,-0.51
+High Crossing Hall,324,12,39614 Mockingbird Pass,809.76,-0.56
+Ridge Oak Hall,325,53,983 Colorado Road,1956.98,-0.48
+Mayer Hall,326,4,54568 Ramsey Drive,917.37,-0.99
+Loeprich Hall,327,49,91 Dottie Drive,325.01,-0.94
+Lighthouse Bay Hall,328,76,70052 Jackson Alley,410.08,-0.43
+Rutledge Hall,329,12,5 Sycamore Trail,1243.35,-0.87
+Toban Hall,330,72,9 Hagan Trail,723.66,-0.34
+Drewry Hall,331,56,576 Mesta Crossing,424.7,-0.17
+Killdeer Hall,332,54,0908 Bellgrove Junction,1006.92,-0.62
+Dahle Hall,333,28,502 Chive Way,461.95,-0.32
+Kipling Hall,334,37,6607 7th Alley,1719.56,-0.36
+Grayhawk Hall,335,25,71 Moose Court,1488.12,-0.22
+Almo Hall,336,68,11863 Comanche Hill,1454.61,-0.41
+Warrior Hall,337,72,44735 Columbus Park,1144.92,-0.43
+Aberg Hall,338,26,389 Arapahoe Parkway,1844.87,-0.68
+Summer Ridge Hall,339,16,2864 Steensland Street,1579.4,-0.74
+Spaight Hall,340,70,28 Warrior Crossing,1889.93,-0.19
+Garrison Hall,341,70,7 Anthes Terrace,1288.15,-0.44
+Jay Hall,342,28,94174 Badeau Park,527.63,-0.9
+Northwestern Hall,343,66,0 Nobel Avenue,180.42,-0.51
+Logan Hall,344,43,7 Golf View Road,1307.95,-0.12
+Colorado Hall,345,17,22 Everett Hill,530.26,-0.67
+Northland Hall,346,22,4040 Warner Terrace,754.59,-0.07
+Banding Hall,347,80,977 Merrick Pass,601.47,-0.76
+Esch Hall,348,19,9 Claremont Pass,838.78,-0.15
+Vahlen Hall,349,77,83 Esch Avenue,1687.4,-0.32
+Mallory Hall,350,73,7367 Crest Line Lane,510.17,-0.13
+Westport Hall,351,48,1 Arkansas Junction,1255.14,-0.73
+Jana Hall,352,57,30255 Delladonna Terrace,294.09,-0.76
+Dryden Hall,353,45,31 Green Ridge Avenue,1793.64,-0.75
+American Ash Hall,354,33,753 Fallview Pass,1410.89,-0.23
+Kim Hall,355,32,86473 Everett Point,1230.72,-0.75
+Lillian Hall,356,46,6 Esker Terrace,663.29,-0.65
+Glendale Hall,357,80,0 Glendale Park,249.32,-0.42
+Waywood Hall,358,43,11779 Carey Parkway,1644.39,-0.72
+Ludington Hall,359,78,7 Buena Vista Circle,658.88,-0.23
+Calypso Hall,360,97,9043 Shopko Parkway,1399.48,-0.91
+Bowman Hall,361,47,43561 Kropf Avenue,812.29,-0.56
+Buena Vista Hall,362,79,4533 Tennyson Crossing,1117.57,-0.1
+Cambridge Hall,363,28,8401 School Plaza,466.11,-0.93
+8th Hall,364,41,66642 Schmedeman Crossing,837.38,-0.01
+Haas Hall,365,74,6484 Corben Junction,952.37,-0.31
+Jenna Hall,366,95,42 Ramsey Plaza,1105.61,-0.9
+Haas Hall,367,54,201 Browning Way,162.25,-0.6
+Sherman Hall,368,84,9 Atwood Pass,1254.61,-0.08
+Sullivan Hall,369,32,0633 Fairview Road,708.61,-0.39
+Knutson Hall,370,34,08 Debs Trail,485.28,-0.2
+Spenser Hall,371,74,487 Hanover Park,1186.5,-0.18
+Forster Hall,372,69,891 Nevada Drive,1799.56,-0.23
+Blue Bill Park Hall,373,30,60487 Anniversary Lane,747.44,-0.91
+Brentwood Hall,374,38,1483 Burrows Alley,1965.67,-0.7
+Drewry Hall,375,18,2421 Northridge Alley,791.1,-0.09
+Park Meadow Hall,376,74,1 Prentice Street,1672.7,-0.91
+Warrior Hall,377,86,8 Di Loreto Pass,1343.27,-0.36
+Graedel Hall,378,52,88 Victoria Parkway,1177.48,-0.28
+4th Hall,379,58,14350 Hermina Trail,214.51,-0.85
+Toban Hall,380,31,71 Marcy Road,540.83,-0.56
+Oak Valley Hall,381,78,51 Acker Center,572.95,-0.82
+Roxbury Hall,382,45,3 Saint Paul Court,1432.4,-0.34
+Bultman Hall,383,14,474 Cambridge Court,1320.08,-0.51
+Fieldstone Hall,384,95,13 Marquette Street,144.55,-0.4
+Barnett Hall,385,36,10833 Gateway Center,1303.19,-0.83
+Fair Oaks Hall,386,37,263 Northwestern Plaza,282.75,-0.4
+Basil Hall,387,47,8094 Buell Crossing,1287.49,-0.98
+Pearson Hall,388,25,20 Scofield Circle,594.64,-0.04
+Kipling Hall,389,64,03590 Gulseth Plaza,1591.86,-0.8
+Drewry Hall,390,82,0346 La Follette Point,568.04,-0.98
+Warner Hall,391,55,75943 Drewry Way,1083.32,-0.12
+American Hall,392,28,62963 Nelson Terrace,1052.18,-0.13
+Havey Hall,393,26,7 Marquette Circle,955.37,-0.11
+Ridgeway Hall,394,97,426 Blue Bill Park Parkway,716.81,-0.45
+Sheridan Hall,395,86,7 Amoth Crossing,570.5,-0.79
+Moose Hall,396,67,9549 Anthes Alley,407.34,-0.82
+Little Fleur Hall,397,59,982 Welch Parkway,1218.87,-0.63
+Hanover Hall,398,49,4 Oak Valley Junction,1573.03,-0.08
+Jana Hall,399,34,0 Kinsman Alley,749.11,-0.62
+Colorado Hall,400,90,2603 Summerview Court,1899.73,-0.97
+Kim Hall,401,9,41416 Lyons Trail,887.38,-0.2
+Pearson Hall,402,21,07 Schmedeman Junction,1013.25,-0.43
+South Hall,403,82,12 Surrey Street,1029.95,-0.01
+Melvin Hall,404,85,0854 Kensington Road,1598.04,-0.15
+Fisk Hall,405,89,6 4th Center,1288.41,-0.26
+Thierer Hall,406,35,2671 Coolidge Plaza,245.32,-0.96
+Lien Hall,407,96,61 Coleman Parkway,940.87,-0.91
+Fremont Hall,408,76,65048 Tennyson Crossing,1617.23,-0.51
+Milwaukee Hall,409,84,21 Mayfield Park,930.92,-0.31
+Menomonie Hall,410,84,935 Stone Corner Place,349.28,-0.75
+David Hall,411,70,8277 Loomis Junction,274.21,-0.41
+Ilene Hall,412,27,8 Lien Center,1235.68,-0.34
+Scott Hall,413,77,205 Anthes Center,132.83,-0.85
+Paget Hall,414,13,8734 Duke Terrace,180.6,-0.8
+Pierstorff Hall,415,97,67029 Express Circle,870.62,-0.97
+Artisan Hall,416,95,5584 Little Fleur Avenue,991.39,-0.75
+Golf Hall,417,98,85459 Di Loreto Trail,1600.19,-0.07
+Sage Hall,418,35,62286 Browning Alley,713.1,-0.33
+Sachs Hall,419,52,7643 Nancy Plaza,608.18,-0.41
+Hagan Hall,420,43,78049 Longview Street,1124.14,-0.02
+Towne Hall,421,80,68184 Canary Drive,1928.31,-0.83
+Meadow Ridge Hall,422,72,221 Cascade Parkway,650.88,-0.51
+Sunfield Hall,423,61,79 International Center,1177.29,-0.8
+Erie Hall,424,82,2 Lindbergh Trail,737.67,-0.24
+Eliot Hall,425,19,51792 Sage Court,796.82,-0.66
+Buhler Hall,426,89,067 Valley Edge Lane,1857.91,-0.64
+Namekagon Hall,427,17,4065 Laurel Junction,1001.96,-0.41
+Pennsylvania Hall,428,93,4 Main Pass,1834.28,-0.55
+Washington Hall,429,35,0801 Anniversary Point,1445.22,-0.03
+Dahle Hall,430,10,46211 Starling Lane,227.88,-0.31
+Dixon Hall,431,82,3122 Norway Maple Terrace,1839.04,-0.7
+Killdeer Hall,432,87,3265 Lyons Terrace,440.08,-0.78
+Florence Hall,433,40,17283 Independence Pass,356.64,-0.86
+Stone Corner Hall,434,57,078 Stephen Court,1739.51,-0.99
+Hanson Hall,435,50,5503 Iowa Crossing,1686.02,-0.99
+Grim Hall,436,33,48 Petterle Junction,1475.96,-0.24
+John Wall Hall,437,74,764 Rieder Plaza,1480.15,-0.22
+Walton Hall,438,27,1 Starling Junction,472.51,-0.96
+Springs Hall,439,58,098 Kinsman Way,1608.71,-0.05
+Kingsford Hall,440,50,1 John Wall Plaza,230.02,-0.09
+Swallow Hall,441,36,859 Linden Center,216.21,-0.01
+Golf View Hall,442,2,208 Elgar Alley,1443.4,-0.1
+Summer Ridge Hall,443,8,17267 Westridge Drive,1041.41,-0.74
+Dwight Hall,444,95,23298 Sauthoff Drive,1359.79,-0.83
+Center Hall,445,69,17506 Starling Trail,117.15,-0.64
+Sloan Hall,446,53,1 3rd Park,1948.85,-0.41
+Manitowish Hall,447,43,0479 Calypso Terrace,700.22,-0.77
+Lillian Hall,448,96,930 Garrison Junction,655.87,-0.17
+Di Loreto Hall,449,7,051 Bartillon Court,184.32,-0.58
+Quincy Hall,450,18,52 Macpherson Alley,227.45,-0.25
+Hoepker Hall,451,53,333 Doe Crossing Center,1428.43,-0.53
+Alpine Hall,452,72,43 Clemons Way,1719.61,-0.31
+Quincy Hall,453,31,05450 Waxwing Plaza,986.56,-0.17
+Pawling Hall,454,73,826 Thierer Alley,1046.67,-0.45
+Acker Hall,455,57,91961 Dayton Street,706.62,-0.58
+Memorial Hall,456,23,4 Wayridge Pass,1672.63,-0.22
+Acker Hall,457,15,6615 Sloan Circle,346.6,-0.12
+Harper Hall,458,67,14 Hallows Crossing,918.3,-0.85
+Ridgeview Hall,459,17,973 Debs Parkway,787.3,-0.27
+Walton Hall,460,79,707 Birchwood Junction,1821.57,-0.01
+Ronald Regan Hall,461,37,8 Lakeland Point,1638.22,-0.71
+Stoughton Hall,462,23,46 Stone Corner Road,1205.84,-0.75
+Vahlen Hall,463,3,08 Acker Junction,251.37,-0.49
+Loomis Hall,464,39,7 Hansons Street,343.49,-0.36
+Red Cloud Hall,465,82,6 Novick Point,1483.32,-0.24
+Golf Hall,466,98,779 Brickson Park Place,824.88,-0.07
+Butternut Hall,467,78,32307 Waywood Park,263.55,-0.36
+John Wall Hall,468,48,26 Melody Way,1416.46,-0.33
+Hanover Hall,469,38,59 Carpenter Way,422.7,-0.68
+Esker Hall,470,73,1448 Chinook Parkway,1265.23,-0.82
+Talisman Hall,471,49,1326 Killdeer Avenue,303.36,-0.03
+Valley Edge Hall,472,56,7966 Emmet Avenue,739.45,-0.33
+High Crossing Hall,473,90,7 Gina Parkway,1183.36,-0.01
+Morning Hall,474,38,2 Sunnyside Lane,832.87,-0.69
+Barnett Hall,475,47,821 Butternut Pass,538.16,-0.15
+Sachtjen Hall,476,74,1741 Park Meadow Terrace,319.1,-0.28
+Arrowood Hall,477,33,975 Onsgard Place,1959.88,-0.22
+Springview Hall,478,5,901 Dennis Street,1495.6,-0.03
+Northfield Hall,479,33,2 Maple Road,1151.6,-0.57
+Buhler Hall,480,60,41 Schiller Junction,897.46,-0.02
+Scott Hall,481,75,71 Oriole Drive,1136.13,-0.35
+Heffernan Hall,482,73,44879 Dovetail Center,493.76,-0.58
+Steensland Hall,483,90,25 Maywood Point,1319.59,-0.18
+Holy Cross Hall,484,95,960 Golf Point,1797.24,-0.48
+Randy Hall,485,100,45204 Mandrake Junction,863.31,-0.45
+Springview Hall,486,85,1237 Crowley Center,822.63,-0.75
+Colorado Hall,487,45,546 Division Avenue,1713.44,-0.85
+Ohio Hall,488,61,3239 Bluestem Center,404.36,-0.25
+Artisan Hall,489,39,24207 Susan Drive,155.58,-0.47
+American Hall,490,67,3 Anhalt Crossing,1128.3,-0.93
+Reindahl Hall,491,99,06356 Myrtle Lane,245.97,-0.71
+Victoria Hall,492,12,5 Blue Bill Park Circle,881.39,-0.07
+Magdeline Hall,493,41,0551 Corben Center,662.39,-0.09
+Fair Oaks Hall,494,36,08 Hovde Place,110.43,-0.93
+Ridgeway Hall,495,3,635 Bartillon Trail,674.23,-0.07
+Wayridge Hall,496,20,701 Crowley Junction,1164.62,-0.02
+Schiller Hall,497,29,6 Mallory Court,624.82,-0.82
+Brickson Park Hall,498,79,98887 Cardinal Road,1168.19,-0.97
+Rigney Hall,499,35,22 Tony Center,702.73,-0.7
+Charing Cross Hall,500,65,4444 Derek Trail,672.23,-0.82
+Clyde Gallagher Hall,501,62,018 Mosinee Plaza,775.12,-0.18
+Clarendon Hall,502,58,961 Lien Way,305.38,-0.63
+Manufacturers Hall,503,30,93267 Ridgeview Street,1901.8,-0.17
+Stang Hall,504,80,30 Dryden Alley,1358.74,-0.57
+Erie Hall,505,98,1 Schmedeman Hill,1967.9,-0.18
+Birchwood Hall,506,56,78 Arizona Junction,227.55,-0.51
+Lindbergh Hall,507,74,8981 Pankratz Alley,1186.1,-0.87
+Brickson Park Hall,508,48,5615 Anzinger Road,1738.1,-0.46
+Forest Run Hall,509,54,9 Stephen Court,296.34,-0.95
+Mccormick Hall,510,34,06 Charing Cross Lane,234.82,-0.03
+Mcguire Hall,511,1,49 Kinsman Court,276.84,-0.89
+Jackson Hall,512,16,264 Morrow Junction,1114.53,-0.05
+Autumn Leaf Hall,513,75,00 Rusk Avenue,538.78,-0.96
+Morning Hall,514,14,32 West Park,534.59,-0.78
+Fieldstone Hall,515,39,72925 Vermont Trail,1149.99,-0.35
+Pennsylvania Hall,516,10,98 Di Loreto Lane,1281.34,-0.07
+Eggendart Hall,517,78,329 Maywood Avenue,1772.99,-0.26
+Sunbrook Hall,518,41,79372 Elka Street,633.02,-0.51
+Green Ridge Hall,519,38,6792 Hanson Junction,1601.32,-0.45
+Northfield Hall,520,37,3966 Sugar Point,759.44,-0.25
+Scofield Hall,521,23,2 Jenna Street,1751.11,-0.52
+Ryan Hall,522,38,4 North Drive,970.2,-0.87
+Rockefeller Hall,523,43,7 Northridge Point,211.4,-0.74
+Duke Hall,524,20,8188 Autumn Leaf Circle,1480.53,-0.92
+Shasta Hall,525,62,6 Scott Lane,465.14,-0.46
+Muir Hall,526,31,8 Debs Street,180.51,-0.46
+Meadow Ridge Hall,527,38,4798 Victoria Terrace,180.06,-0.32
+Goodland Hall,528,3,11 Corscot Street,1919.82,-0.24
+Daystar Hall,529,38,4746 Helena Center,821.1,-0.03
+Carey Hall,530,42,2561 Mariners Cove Street,1305.86,-0.89
+Buell Hall,531,36,76 Esch Crossing,310.31,-0.99
+Oxford Hall,532,60,29 Monterey Drive,1191.23,-0.29
+Sugar Hall,533,8,8 Bayside Street,1677.42,-0.73
+Sycamore Hall,534,50,2178 Mallard Avenue,964.82,-0.92
+Nobel Hall,535,76,199 Orin Way,1721.99,-0.97
+Dryden Hall,536,71,4 Coolidge Terrace,1588.05,-0.64
+Esker Hall,537,37,3 Pierstorff Pass,449.29,-0.44
+Stang Hall,538,89,9 Center Center,1104.8,-0.55
+Northview Hall,539,51,57007 Raven Point,214.75,-0.34
+Pleasure Hall,540,21,299 Lighthouse Bay Junction,668.78,-0.57
+Hollow Ridge Hall,541,90,1585 Summit Street,945.06,-0.19
+Coleman Hall,542,64,48642 Arapahoe Junction,842.7,-0.73
+Sage Hall,543,83,8154 Nova Way,1800.22,-0.57
+Springview Hall,544,65,8 Burrows Way,1122.1,-0.01
+School Hall,545,36,7 Bellgrove Place,155.38,-0.32
+School Hall,546,19,8263 Cherokee Road,1668.53,-0.99
+Maple Hall,547,100,811 Esker Circle,1397.28,-0.57
+Sage Hall,548,66,2677 Caliangt Circle,1671.65,-0.2
+Farragut Hall,549,76,74 Crowley Terrace,299.89,-0.62
+Clemons Hall,550,8,1661 Esker Circle,1440.8,-0.98
+Hovde Hall,551,8,35 Dryden Terrace,1700.05,-0.84
+Lunder Hall,552,92,56 Crownhardt Park,1587.35,-0.55
+Lerdahl Hall,553,50,0 Badeau Hill,1053.01,-0.24
+Northport Hall,554,49,1117 South Way,1774.7,-0.47
+Killdeer Hall,555,7,7999 Hanover Terrace,1641.05,-0.66
+Nobel Hall,556,85,445 Loomis Park,617.88,-0.1
+Anniversary Hall,557,52,489 Ilene Court,1737.06,-0.68
+Atwood Hall,558,1,7 Lunder Street,1320.46,-0.28
+Armistice Hall,559,77,62 Homewood Circle,1329.7,-0.77
+Vernon Hall,560,81,24712 Dawn Road,122.59,-0.78
+Mesta Hall,561,80,5 Lindbergh Trail,398.49,-0.81
+Eastlawn Hall,562,24,44 Brentwood Place,1407.43,-0.03
+Bultman Hall,563,81,0 Bluejay Terrace,353.53,-0.7
+Goodland Hall,564,89,1569 Artisan Point,648.76,-0.3
+Merrick Hall,565,19,328 Clemons Road,296.68,-0.76
+Carioca Hall,566,64,2 Drewry Way,1122.04,-0.4
+Raven Hall,567,3,1882 Anthes Parkway,592.49,-0.34
+4th Hall,568,46,74 Ridgeway Street,364.87,-0.63
+Waxwing Hall,569,50,1500 Leroy Terrace,369.58,-0.73
+Judy Hall,570,61,70 Grasskamp Drive,470.81,-0.89
+Gina Hall,571,1,7 American Ash Way,1998.84,-0.11
+Welch Hall,572,62,49023 Westridge Hill,597.07,-0.1
+Mariners Cove Hall,573,28,95554 Jana Center,185.62,-0.52
+Saint Paul Hall,574,53,1414 Briar Crest Hill,1130.0,-0.39
+Texas Hall,575,72,332 Melvin Parkway,707.08,-0.91
+Judy Hall,576,38,355 Harbort Park,1853.73,-0.53
+Truax Hall,577,27,4733 Glendale Court,1273.01,-0.63
+Calypso Hall,578,80,240 Forest Run Way,1622.75,-0.95
+Crownhardt Hall,579,16,9452 Sunbrook Terrace,209.55,-0.91
+Randy Hall,580,68,3928 Johnson Street,1072.42,-0.14
+Summit Hall,581,55,20517 Sutherland Hill,1692.31,-0.18
+Thompson Hall,582,100,8060 6th Terrace,1588.39,-0.69
+Hallows Hall,583,30,04001 Onsgard Plaza,780.67,-0.45
+Pond Hall,584,26,32 Redwing Plaza,676.4,-0.19
+Brentwood Hall,585,69,829 Moose Drive,1824.89,-0.21
+Stuart Hall,586,2,6614 Northwestern Court,1861.55,-0.77
+Lakewood Gardens Hall,587,23,3 Mayer Pass,1655.61,-0.91
+Sunnyside Hall,588,77,341 Lotheville Crossing,880.36,-0.52
+Summerview Hall,589,46,39881 Pennsylvania Pass,499.67,-0.33
+Paget Hall,590,71,30390 Manitowish Hill,838.14,-0.23
+Crescent Oaks Hall,591,46,3752 Rusk Terrace,1264.74,-0.72
+Melby Hall,592,89,204 Calypso Avenue,1098.39,-0.16
+Drewry Hall,593,18,5358 Banding Lane,1566.57,-0.05
+Monterey Hall,594,86,685 Shelley Center,1769.34,-0.32
+Roxbury Hall,595,99,46 Portage Street,1857.99,-0.05
+Quincy Hall,596,46,6898 Continental Terrace,933.98,-0.94
+Susan Hall,597,42,91 Hagan Pass,500.14,-0.33
+Laurel Hall,598,65,053 Eliot Hill,283.56,-0.99
+Springview Hall,599,78,028 Hanson Avenue,1315.15,-0.8
+Superior Hall,600,66,6 American Ash Drive,1793.13,-0.48
+Meadow Valley Hall,601,16,9037 Shopko Crossing,730.22,-0.14
+Straubel Hall,602,89,19845 Loeprich Trail,1074.21,-0.68
+Weeping Birch Hall,603,59,05 Meadow Valley Center,1007.85,-0.24
+Helena Hall,604,25,5 Meadow Valley Park,129.58,-0.9
+Elka Hall,605,38,562 Arkansas Hill,407.87,-0.14
+Burrows Hall,606,65,278 Lyons Pass,503.6,-0.53
+Annamark Hall,607,55,99106 Dorton Circle,131.88,-0.67
+Dexter Hall,608,81,4688 Marquette Alley,1909.58,-0.79
+Twin Pines Hall,609,68,6 Stephen Way,120.05,-0.65
+Oxford Hall,610,20,28393 Canary Center,747.03,-0.94
+Cottonwood Hall,611,93,47456 Hintze Hill,1140.3,-0.8
+Lighthouse Bay Hall,612,54,09802 Esch Parkway,1812.18,-0.22
+Myrtle Hall,613,36,6788 Fallview Park,1833.32,-0.26
+Esker Hall,614,66,30058 Mitchell Pass,507.17,-0.16
+Bay Hall,615,33,1106 Beilfuss Circle,1059.18,-0.87
+Chinook Hall,616,73,6393 Upham Avenue,1096.52,-0.0
+Lyons Hall,617,72,80 Pearson Road,1589.45,-0.25
+Old Shore Hall,618,20,08184 Mifflin Point,266.53,-0.08
+Schurz Hall,619,2,7603 Lunder Court,1900.57,-0.76
+Independence Hall,620,76,3 Sugar Crossing,183.85,-0.03
+Cardinal Hall,621,69,31 Elka Lane,1148.71,-0.77
+Nelson Hall,622,4,57324 Schmedeman Alley,283.2,-0.38
+Pepper Wood Hall,623,47,2679 Green Ridge Street,851.67,-0.65
+Blue Bill Park Hall,624,50,43521 Declaration Terrace,1838.83,-0.24
+Forest Hall,625,6,478 Ilene Avenue,1218.46,-0.24
+Ludington Hall,626,81,88772 Waywood Plaza,1304.17,-0.63
+Little Fleur Hall,627,90,4082 Vidon Trail,114.57,-0.19
+Prentice Hall,628,51,9 Bellgrove Point,525.25,-0.2
+Cascade Hall,629,32,45 Fairview Plaza,300.1,-0.8
+Kropf Hall,630,24,490 New Castle Point,992.44,-0.33
+Bellgrove Hall,631,91,0 Badeau Circle,702.95,-0.11
+Melby Hall,632,52,260 Bobwhite Court,963.81,-0.95
+Welch Hall,633,89,87992 Red Cloud Drive,917.87,-0.19
+Darwin Hall,634,14,1231 Nobel Road,1375.76,-0.29
+Evergreen Hall,635,87,067 Northridge Pass,1477.39,-0.96
+Stang Hall,636,33,4156 Sugar Park,1769.84,-0.93
+Mosinee Hall,637,8,26 Crownhardt Park,1687.2,-0.6
+Shopko Hall,638,16,5291 Towne Way,302.63,-0.89
+Maywood Hall,639,63,638 Northport Point,160.27,-0.6
+Mcbride Hall,640,21,0 Ludington Drive,1243.15,-0.71
+Norway Maple Hall,641,49,49812 Lindbergh Road,723.42,-0.32
+Sugar Hall,642,30,27 Grasskamp Lane,421.78,-0.54
+Banding Hall,643,39,1715 Delladonna Lane,1549.03,-0.43
+Trailsway Hall,644,1,45 Annamark Avenue,882.45,-0.32
+Reinke Hall,645,59,3209 Browning Place,898.67,-0.64
+Stone Corner Hall,646,27,77 Porter Center,218.42,-0.64
+Knutson Hall,647,52,1 Dorton Alley,1872.68,-0.1
+Mandrake Hall,648,79,80521 Arrowood Road,1744.74,-0.29
+Aberg Hall,649,55,60520 Westerfield Circle,446.94,-0.76
+Reinke Hall,650,67,5120 Fulton Crossing,437.31,-0.26
+Algoma Hall,651,47,3 Carpenter Court,1656.46,-0.9
+Merrick Hall,652,72,0087 Coolidge Junction,406.23,-0.58
+Fuller Hall,653,30,2788 Brown Street,899.11,-0.61
+Parkside Hall,654,62,7 Cherokee Alley,1594.44,-0.45
+Novick Hall,655,36,3927 Graceland Crossing,1472.66,-0.42
+Algoma Hall,656,71,84 Buena Vista Circle,1624.22,-0.7
+Sugar Hall,657,82,693 Veith Lane,677.79,-0.63
+3rd Hall,658,7,16369 Kim Hill,763.64,-0.53
+School Hall,659,65,74303 Cordelia Court,1549.37,-0.26
+Gerald Hall,660,91,9 Del Mar Circle,1207.11,-0.45
+American Hall,661,59,64333 Birchwood Circle,1601.7,-0.54
+Amoth Hall,662,91,6 Green Park,694.82,-0.42
+Sunbrook Hall,663,89,01 Utah Road,964.16,-0.2
+Scofield Hall,664,19,38440 Sutherland Park,1052.53,-0.93
+Blackbird Hall,665,53,3649 Dovetail Crossing,783.22,-0.31
+Memorial Hall,666,39,76264 Kipling Junction,1025.06,-0.22
+Northview Hall,667,91,97 Blaine Crossing,1204.42,-0.51
+Upham Hall,668,55,8 Transport Junction,895.93,-0.07
+Hanover Hall,669,33,4 Green Ridge Pass,1372.49,-0.93
+Schiller Hall,670,23,363 Stone Corner Pass,1574.19,-0.34
+Sloan Hall,671,50,5047 Mariners Cove Terrace,901.51,-0.78
+Sundown Hall,672,61,150 Fair Oaks Road,723.07,-0.71
+Division Hall,673,80,83305 Bashford Drive,815.54,-0.85
+Gerald Hall,674,40,0 Dawn Alley,1044.4,-0.41
+Swallow Hall,675,33,945 Columbus Center,1655.12,-0.07
+Waywood Hall,676,36,8 Grayhawk Road,1909.56,-0.13
+Linden Hall,677,52,3599 Fairview Hill,750.82,-0.29
+Dorton Hall,678,28,5852 Corry Junction,1232.58,-0.58
+Thierer Hall,679,65,6277 Swallow Avenue,1210.44,-0.4
+Daystar Hall,680,48,26600 Delaware Street,1213.23,-0.83
+Algoma Hall,681,62,7699 Eastlawn Alley,1384.36,-0.76
+Riverside Hall,682,34,2740 Farmco Hill,476.6,-0.23
+Di Loreto Hall,683,59,892 Lake View Hill,1600.49,-0.72
+Dawn Hall,684,74,051 Twin Pines Plaza,798.26,-0.65
+1st Hall,685,6,5001 Eggendart Park,829.11,-0.36
+Lyons Hall,686,34,6 Heath Point,1659.41,-0.8
+8th Hall,687,10,9126 Columbus Plaza,715.57,-0.62
+Ridgeview Hall,688,38,8 Hallows Lane,1325.78,-0.79
+Chinook Hall,689,89,88 Logan Point,349.82,-0.07
+Katie Hall,690,35,8 Briar Crest Trail,226.97,-0.26
+Springs Hall,691,66,65 Hoffman Trail,512.74,-0.91
+Eggendart Hall,692,78,37859 Westridge Terrace,939.68,-0.3
+Vernon Hall,693,44,9 Clemons Place,1185.27,-0.43
+Sommers Hall,694,52,23 Havey Avenue,628.62,-0.46
+Vernon Hall,695,4,33 Dahle Court,208.89,-0.66
+Mifflin Hall,696,10,54 Kipling Road,792.08,-0.38
+Superior Hall,697,80,8727 Manufacturers Point,1311.72,-0.39
+Bowman Hall,698,52,44912 Eliot Trail,1136.97,-0.87
+Welch Hall,699,20,4616 Del Mar Center,392.95,-0.65
+Randy Hall,700,36,55271 Sloan Plaza,433.2,-0.86
+Shasta Hall,701,99,0 Lindbergh Lane,1966.14,-0.67
+Jay Hall,702,36,05114 Brickson Park Parkway,354.9,-0.25
+Sage Hall,703,61,7 Hoepker Drive,667.98,-0.27
+Doe Crossing Hall,704,29,66 Thierer Hill,710.8,-0.96
+Manufacturers Hall,705,98,2 Katie Court,1685.3,-0.09
+Cascade Hall,706,50,3270 Pine View Pass,501.61,-0.1
+Ohio Hall,707,46,044 Montana Center,942.97,-0.93
+Park Meadow Hall,708,9,4 Utah Court,597.09,-0.34
+Pine View Hall,709,37,66 Southridge Road,1388.96,-0.7
+Waywood Hall,710,26,0450 Hanover Road,468.0,-0.82
+West Hall,711,52,694 Trailsway Trail,238.3,-0.7
+Menomonie Hall,712,85,3 Bunting Way,1590.23,-0.96
+Gulseth Hall,713,8,605 Oneill Center,844.68,-0.91
+Swallow Hall,714,33,64 Dorton Alley,1339.83,-0.1
+Walton Hall,715,3,8217 Golf Course Circle,351.57,-0.11
+West Hall,716,60,99619 Myrtle Junction,1912.51,-1.0
+Moland Hall,717,40,70 Browning Lane,802.94,-0.64
+Saint Paul Hall,718,73,69 Manley Road,110.78,-0.76
+Buhler Hall,719,50,4790 Barby Way,946.6,-0.76
+Barnett Hall,720,55,33 Cordelia Center,785.25,-0.39
+Melody Hall,721,4,272 Evergreen Pass,111.34,-0.17
+Surrey Hall,722,81,734 Farwell Street,1540.5,-0.8
+Schurz Hall,723,33,75206 Welch Park,1533.23,-0.83
+Warrior Hall,724,53,093 Forest Run Park,1563.54,-0.49
+Di Loreto Hall,725,67,7 Mcbride Lane,1710.06,-0.83
+Barnett Hall,726,38,40 Algoma Center,946.82,-0.17
+Forster Hall,727,4,3605 Erie Junction,655.02,-0.8
+Arapahoe Hall,728,20,351 Hayes Drive,343.26,-0.08
+Portage Hall,729,9,5 Packers Court,1968.31,-0.87
+Myrtle Hall,730,68,077 Lake View Alley,1882.71,-0.12
+Iowa Hall,731,7,7061 Blue Bill Park Crossing,1986.95,-0.73
+Dakota Hall,732,29,674 Elgar Circle,1446.98,-0.09
+Messerschmidt Hall,733,63,48 6th Pass,1680.46,-0.72
+Duke Hall,734,100,8 Bluestem Hill,395.54,-1.0
+Golden Leaf Hall,735,51,30586 Heath Lane,964.35,-0.87
+Burning Wood Hall,736,70,10 Grim Hill,1381.82,-0.12
+Orin Hall,737,75,6 High Crossing Trail,179.71,-0.73
+Roth Hall,738,88,3919 Schurz Avenue,1344.03,-0.69
+Homewood Hall,739,16,65 Bartillon Trail,1560.03,-0.78
+Melvin Hall,740,53,78 Dawn Alley,1304.54,-0.02
+Drewry Hall,741,72,427 Washington Junction,347.43,-0.8
+Merrick Hall,742,47,9345 Hermina Junction,363.28,-0.38
+Delladonna Hall,743,45,61461 Loeprich Plaza,732.3,-0.4
+Scoville Hall,744,2,075 Lakewood Gardens Avenue,1032.55,-0.29
+Warner Hall,745,10,88733 South Place,348.91,-0.7
+Paget Hall,746,29,20 Ridgeview Plaza,1747.31,-0.59
+Nova Hall,747,62,9105 Gateway Drive,467.89,-0.39
+Messerschmidt Hall,748,29,896 Everett Place,228.79,-0.62
+Welch Hall,749,29,47 Stang Crossing,383.5,-0.01
+Packers Hall,750,49,90515 Haas Hill,1602.18,-0.44
+High Crossing Hall,751,35,25970 Loeprich Avenue,816.96,-0.28
+Elgar Hall,752,99,6 7th Alley,1211.13,-0.58
+Columbus Hall,753,86,50 Saint Paul Lane,1307.52,-0.53
+Oak Hall,754,91,7895 Sheridan Road,826.6,-0.63
+Atwood Hall,755,68,6 Bunting Point,336.23,-0.29
+Milwaukee Hall,756,4,5111 Bayside Place,1166.05,-0.78
+Valley Edge Hall,757,38,6 Debra Parkway,1261.73,-0.17
+Hintze Hall,758,58,867 Huxley Way,637.43,-0.51
+Pine View Hall,759,3,61 Wayridge Way,707.43,-0.96
+Moulton Hall,760,13,4901 Lillian Hill,1371.58,-0.04
+Carey Hall,761,49,1231 High Crossing Point,1171.11,-0.37
+Garrison Hall,762,16,50477 Hansons Avenue,546.67,-0.34
+Dovetail Hall,763,3,66510 Sutherland Pass,1845.12,-0.7
+Dexter Hall,764,26,570 Norway Maple Hill,1653.25,-0.56
+Stang Hall,765,98,49340 Eliot Trail,849.64,-0.35
+Bartillon Hall,766,34,4381 Crescent Oaks Alley,496.12,-0.78
+Sage Hall,767,63,79681 Duke Crossing,445.4,-0.26
+Harper Hall,768,56,19390 Pawling Terrace,400.92,-0.88
+Debs Hall,769,20,2622 Forest Way,183.36,-0.18
+Farwell Hall,770,79,0886 Heffernan Way,1667.46,-0.26
+Tennessee Hall,771,12,6566 Rutledge Trail,118.85,-0.15
+Division Hall,772,33,7 Marcy Court,1964.95,-0.4
+Truax Hall,773,72,8139 Redwing Place,1110.14,-0.29
+Thierer Hall,774,57,61 Russell Parkway,1183.61,-0.64
+Moulton Hall,775,85,47 Messerschmidt Junction,126.57,-0.38
+Bluejay Hall,776,66,1 Toban Place,1059.09,-0.69
+Lien Hall,777,93,927 Northview Place,1352.67,-0.44
+Jenifer Hall,778,69,6 Swallow Circle,375.15,-0.98
+Delaware Hall,779,2,5757 Surrey Park,930.49,-0.46
+Ilene Hall,780,2,2010 Scott Street,606.79,-0.72
+Almo Hall,781,48,9439 Mccormick Place,302.01,-0.88
+Anhalt Hall,782,100,051 Beilfuss Trail,782.79,-0.29
+Old Shore Hall,783,85,56737 Hovde Avenue,1474.49,-0.91
+Calypso Hall,784,92,725 Shoshone Road,1263.26,-0.97
+Pankratz Hall,785,4,16838 Columbus Way,112.23,-0.05
+Westport Hall,786,65,94867 Ruskin Junction,427.97,-0.77
+Blackbird Hall,787,98,81848 Hudson Circle,569.69,-0.03
+Tomscot Hall,788,45,37343 Sunbrook Center,1621.56,-0.58
+Old Gate Hall,789,94,7 Sundown Trail,1082.27,-0.27
+Riverside Hall,790,7,0 6th Alley,842.21,-0.21
+Sauthoff Hall,791,76,47 Colorado Point,1708.18,-0.7
+Armistice Hall,792,2,248 Declaration Plaza,912.48,-0.82
+Homewood Hall,793,59,7420 Emmet Court,469.81,-0.62
+Pierstorff Hall,794,6,3 Hazelcrest Drive,180.83,-0.59
+Superior Hall,795,28,75393 Buena Vista Drive,1252.0,-0.84
+Kings Hall,796,21,37 Springs Drive,1255.4,-0.39
+Iowa Hall,797,59,2 Killdeer Place,1433.97,-0.45
+5th Hall,798,36,4664 Warner Pass,742.06,-0.75
+Briar Crest Hall,799,89,87 Carioca Pass,1007.82,-0.37
+Dixon Hall,800,29,1 Ludington Circle,1282.67,-0.37
+Melrose Hall,801,92,0725 Riverside Place,712.94,-0.76
+Waxwing Hall,802,46,6 Kropf Junction,255.99,-0.27
+8th Hall,803,25,93 Corscot Street,418.79,-0.16
+Kedzie Hall,804,16,1252 Surrey Avenue,1794.95,-0.22
+Glendale Hall,805,19,42 Swallow Drive,1791.35,-0.76
+Goodland Hall,806,29,94 8th Street,1551.22,-0.37
+Bonner Hall,807,10,03 Erie Junction,311.49,-0.91
+Washington Hall,808,85,04181 Walton Drive,1259.17,-0.73
+Novick Hall,809,72,3 Dottie Alley,1107.13,-0.21
+Charing Cross Hall,810,42,0 Birchwood Trail,411.12,-0.95
+Browning Hall,811,54,90 Scoville Point,1040.24,-0.05
+Crowley Hall,812,99,0 Dunning Crossing,1650.12,-0.73
+Sutteridge Hall,813,96,9039 Kingsford Circle,1182.11,-0.98
+Hayes Hall,814,92,958 Mariners Cove Road,1761.65,-0.38
+Meadow Ridge Hall,815,5,334 Hazelcrest Court,754.67,-0.65
+Mallory Hall,816,24,6963 Union Avenue,454.45,-0.2
+Northwestern Hall,817,20,1 Carberry Point,233.14,-0.04
+Warbler Hall,818,84,0 Moose Street,1767.02,-0.02
+Shelley Hall,819,19,76277 Longview Road,245.6,-0.31
+Moose Hall,820,47,88 Arapahoe Pass,503.32,-0.45
+Nelson Hall,821,45,568 Oneill Alley,716.59,-0.67
+Corry Hall,822,50,95 Straubel Center,1886.0,-0.92
+Maywood Hall,823,51,2768 Golf Street,509.02,-0.65
+Dryden Hall,824,50,136 Kinsman Circle,1984.7,-0.8
+Express Hall,825,46,5515 Spenser Alley,1130.75,-0.34
+Anderson Hall,826,96,668 Corben Park,1810.05,-0.3
+Canary Hall,827,93,09077 Northview Terrace,1352.84,-0.93
+Center Hall,828,58,754 Melvin Plaza,1837.61,-0.54
+Dixon Hall,829,52,1 Ryan Trail,1038.85,-0.89
+Johnson Hall,830,87,4 Nevada Way,977.3,-0.65
+Caliangt Hall,831,88,056 Milwaukee Plaza,1213.62,-0.48
+Lukken Hall,832,27,98878 Holmberg Drive,444.71,-0.44
+Hooker Hall,833,89,43 Northland Hill,653.59,-0.97
+3rd Hall,834,98,99662 Barnett Hill,1832.4,-0.16
+Cascade Hall,835,96,41 Gina Drive,279.36,-0.23
+Helena Hall,836,7,7 Mayfield Junction,1200.39,-0.66
+Basil Hall,837,59,6047 Corben Parkway,1955.46,-0.68
+Saint Paul Hall,838,19,0 Village Green Center,1509.48,-0.61
+Eliot Hall,839,6,90 Transport Center,1318.3,-0.51
+Texas Hall,840,68,9 Golf Course Trail,345.37,-0.06
+Longview Hall,841,69,875 Petterle Crossing,109.76,-0.01
+Browning Hall,842,1,99 American Ash Circle,619.16,-0.25
+Shelley Hall,843,35,5116 Portage Terrace,1356.81,-0.86
+Pepper Wood Hall,844,60,205 Dayton Street,747.36,-0.86
+Rigney Hall,845,14,7556 Hoard Hill,434.52,-0.77
+Walton Hall,846,56,8 Buell Plaza,1947.45,-0.24
+Lien Hall,847,24,78 Iowa Way,1214.03,-0.16
+John Wall Hall,848,97,862 Derek Terrace,1038.56,-0.41
+Village Hall,849,54,45 Bellgrove Crossing,735.41,-0.89
+Browning Hall,850,94,1 Columbus Center,1520.69,-0.68
+Huxley Hall,851,76,4 Reinke Way,1572.82,-0.32
+John Wall Hall,852,34,64 Fallview Plaza,279.52,-0.71
+Anniversary Hall,853,4,20928 Schiller Lane,233.11,-0.44
+Oak Hall,854,24,6381 Towne Trail,1936.41,-0.64
+Dorton Hall,855,58,10009 Ilene Alley,1051.39,-0.17
+Jana Hall,856,87,714 Loomis Place,389.78,-0.73
+Knutson Hall,857,70,7 Sloan Junction,897.75,-0.12
+Spaight Hall,858,32,7325 Valley Edge Point,834.3,-0.36
+Sunbrook Hall,859,24,3240 Beilfuss Court,573.3,-0.28
+Dovetail Hall,860,99,85855 Warrior Crossing,1053.34,-0.59
+Mariners Cove Hall,861,78,37 Hoffman Junction,734.06,-0.3
+Chinook Hall,862,75,4 Prairieview Park,1883.75,-0.88
+Luster Hall,863,34,462 Raven Trail,1475.36,-0.96
+Rusk Hall,864,90,133 Dixon Circle,902.22,-0.62
+Calypso Hall,865,62,2 Waubesa Court,1589.97,-0.78
+Amoth Hall,866,8,3145 Colorado Junction,476.72,-0.85
+Pearson Hall,867,93,2 Northport Center,1303.99,-0.29
+Sugar Hall,868,64,22 Crownhardt Alley,289.71,-0.38
+Scofield Hall,869,93,57372 Troy Street,228.33,-0.38
+Victoria Hall,870,53,169 Northland Alley,153.26,-0.02
+Almo Hall,871,62,7 Nova Parkway,679.85,-0.47
+Eggendart Hall,872,47,81 Rowland Lane,1111.8,-0.85
+Jenifer Hall,873,15,1 Barnett Trail,359.14,-0.57
+Cottonwood Hall,874,56,602 Milwaukee Lane,460.51,-0.01
+Columbus Hall,875,63,611 Shoshone Street,626.59,-0.12
+Garrison Hall,876,52,74 Alpine Plaza,124.9,-0.14
+Sunnyside Hall,877,87,641 Waywood Way,866.16,-0.58
+Heath Hall,878,61,3 Dapin Avenue,1256.49,-0.28
+Onsgard Hall,879,46,5 Loomis Junction,535.6,-0.81
+Hayes Hall,880,11,07 Sommers Junction,1118.82,-0.0
+Warrior Hall,881,67,18 Loeprich Avenue,831.52,-0.81
+Anzinger Hall,882,57,33 Morningstar Center,1177.2,-0.54
+Bellgrove Hall,883,57,0 Glacier Hill Road,1297.25,-0.13
+Garrison Hall,884,29,8800 Bonner Road,1962.32,-0.41
+Carey Hall,885,22,14090 Ridgeway Plaza,1367.87,-0.13
+Superior Hall,886,32,0367 Burning Wood Terrace,1585.36,-0.14
+Drewry Hall,887,53,73483 Warrior Terrace,1392.21,-0.08
+Monument Hall,888,53,91577 Brentwood Point,862.3,-0.38
+Claremont Hall,889,34,76038 Oriole Park,591.62,-0.69
+Harper Hall,890,84,694 Graceland Park,1357.13,-0.79
+Birchwood Hall,891,20,93 Main Lane,1289.27,-0.25
+Lindbergh Hall,892,31,96 Springs Street,689.54,-0.72
+Jana Hall,893,22,007 Gerald Terrace,215.98,-0.7
+Ramsey Hall,894,90,000 Anthes Trail,184.94,-0.71
+Muir Hall,895,62,78 Dapin Terrace,100.88,-0.73
+Elmside Hall,896,58,79 Atwood Hill,184.13,-0.45
+Laurel Hall,897,39,08501 Trailsway Terrace,202.31,-0.17
+Shelley Hall,898,60,55 Tony Terrace,1597.93,-0.78
+Randy Hall,899,84,93389 Weeping Birch Street,979.49,-0.41
+Dorton Hall,900,47,95 Eastwood Park,1202.85,-0.32
+Morrow Hall,901,100,84 Roth Crossing,1108.51,-0.33
+Mallory Hall,902,91,7302 Bartillon Hill,255.45,-0.43
+Loomis Hall,903,88,551 Butterfield Alley,479.1,-0.41
+Muir Hall,904,85,6 Florence Drive,576.58,-0.06
+Portage Hall,905,1,29 Red Cloud Road,1648.7,-0.15
+Huxley Hall,906,22,586 Anniversary Point,1763.74,-0.93
+Northfield Hall,907,94,14 Nelson Crossing,1988.67,-0.01
+Corben Hall,908,95,897 Pepper Wood Street,1959.7,-0.68
+Fieldstone Hall,909,1,6831 Ludington Point,296.55,-0.78
+Farmco Hall,910,96,9462 Warrior Alley,1814.67,-0.73
+Sunfield Hall,911,84,30421 Stuart Crossing,1088.8,-0.76
+Summerview Hall,912,87,5 Marcy Center,228.35,-0.11
+Bunker Hill Hall,913,48,875 Northridge Hill,738.14,-0.81
+Bunting Hall,914,17,126 Maple Wood Terrace,1143.24,-0.82
+Swallow Hall,915,5,3 Tony Drive,608.13,-0.45
+Loeprich Hall,916,77,00131 Parkside Hill,1407.25,-0.44
+Claremont Hall,917,29,9039 Morningstar Parkway,1666.27,-0.1
+Artisan Hall,918,56,073 Thackeray Parkway,726.51,-0.2
+Mallory Hall,919,93,764 Coleman Drive,579.59,-0.37
+Bellgrove Hall,920,77,441 Burrows Circle,1122.72,-0.48
+Marcy Hall,921,1,6 Anniversary Avenue,1420.55,-0.67
+Fordem Hall,922,8,68537 Hoard Avenue,1394.15,-0.24
+Summer Ridge Hall,923,96,15 Summer Ridge Road,566.71,-0.37
+Lawn Hall,924,17,36035 Fieldstone Lane,1842.3,-0.21
+Summerview Hall,925,14,3580 Everett Court,1138.85,-0.45
+Bowman Hall,926,99,5669 Thackeray Road,381.14,-0.72
+Mesta Hall,927,4,20 Vermont Road,1852.05,-0.39
+Saint Paul Hall,928,27,30546 Shelley Terrace,1656.79,-0.17
+Village Hall,929,99,61686 Kedzie Crossing,630.76,-0.1
+Bunting Hall,930,90,3 Vera Crossing,1529.42,-0.15
+Darwin Hall,931,7,6 Sycamore Court,1675.7,-0.65
+Birchwood Hall,932,55,4586 Mitchell Plaza,1400.59,-0.83
+Nobel Hall,933,10,4 Independence Court,619.53,-0.82
+Pearson Hall,934,59,51 Clarendon Avenue,1701.14,-0.95
+Waxwing Hall,935,42,18 Melrose Junction,238.72,-0.84
+La Follette Hall,936,61,87044 Washington Parkway,115.49,-0.37
+Badeau Hall,937,89,4050 Gulseth Park,436.23,-0.78
+Karstens Hall,938,67,57919 Porter Drive,1464.59,-0.41
+Susan Hall,939,2,8751 Sherman Road,102.5,-0.11
+Blackbird Hall,940,82,79058 Fallview Way,961.65,-0.92
+American Ash Hall,941,12,5348 Huxley Way,1271.58,-0.97
+Monterey Hall,942,40,0 Hovde Terrace,320.85,-0.56
+Corry Hall,943,33,4 Sherman Hill,290.91,-0.13
+Morning Hall,944,71,674 Lillian Plaza,1337.57,-0.85
+Jay Hall,945,93,5 Hansons Junction,789.79,-0.64
+Utah Hall,946,33,901 Talisman Circle,212.21,-0.75
+Oak Hall,947,49,7330 Eagan Park,1650.81,-0.69
+Scott Hall,948,77,898 Eggendart Court,1539.57,-0.61
+Straubel Hall,949,86,989 Fairfield Pass,1396.02,-0.11
+Manley Hall,950,38,7772 Village Green Avenue,1763.55,-0.68
+Graedel Hall,951,8,4 Sauthoff Trail,1026.29,-0.48
+Northport Hall,952,67,85 Dwight Road,472.13,-0.75
+Spenser Hall,953,25,108 Carey Place,900.39,-0.89
+Hoepker Hall,954,76,13987 Fulton Terrace,698.46,-0.89
+Kinsman Hall,955,84,02479 Hoepker Circle,369.69,-0.23
+Burrows Hall,956,17,468 Mesta Pass,1992.89,-0.45
+Coolidge Hall,957,39,549 Vidon Plaza,1886.54,-0.2
+Sachtjen Hall,958,57,344 Summer Ridge Terrace,1458.47,-0.75
+Delladonna Hall,959,90,7840 Luster Place,484.94,-0.63
+Kipling Hall,960,18,88668 Tennessee Circle,844.94,-0.36
+Russell Hall,961,28,7008 Buhler Center,1078.91,-0.82
+Fulton Hall,962,29,248 Shelley Plaza,1835.41,-0.58
+Susan Hall,963,100,65 Riverside Plaza,1378.09,-0.3
+Garrison Hall,964,80,35867 Blaine Way,172.64,-0.57
+Oneill Hall,965,89,9 Hallows Crossing,409.32,-0.03
+Meadow Valley Hall,966,59,025 Lerdahl Hill,858.09,-0.8
+Rockefeller Hall,967,35,295 Kinsman Plaza,926.45,-0.67
+Prairieview Hall,968,27,681 Bluejay Crossing,248.87,-0.42
+Havey Hall,969,81,27 Forest Alley,721.42,-0.28
+Hermina Hall,970,36,58 Prairieview Junction,1676.23,-0.26
+Fieldstone Hall,971,17,302 Schmedeman Crossing,520.5,-0.81
+Westend Hall,972,82,579 Main Junction,485.46,-0.83
+Luster Hall,973,94,8 Eggendart Point,595.13,-0.53
+Talisman Hall,974,83,6 Armistice Alley,1879.03,-0.16
+Dayton Hall,975,59,0700 Anzinger Road,1037.99,-0.65
+Northport Hall,976,22,3 West Junction,1556.71,-0.98
+Russell Hall,977,51,06281 Hauk Crossing,317.76,-0.77
+Evergreen Hall,978,67,5581 Warrior Point,1302.07,-0.15
+Menomonie Hall,979,36,2115 Kingsford Street,1925.13,-0.74
+Forest Run Hall,980,24,43480 Grover Point,304.02,-0.29
+Miller Hall,981,80,9 Johnson Alley,1249.85,-0.72
+American Ash Hall,982,54,241 Sachtjen Terrace,1813.34,-0.34
+Fremont Hall,983,84,80 Morning Plaza,252.47,-0.56
+Johnson Hall,984,88,9 Lawn Avenue,515.95,-0.46
+Service Hall,985,16,5 Harper Drive,1385.9,-0.61
+High Crossing Hall,986,81,64 Nelson Avenue,1207.61,-0.9
+Mayfield Hall,987,19,84 Arrowood Street,1197.27,-0.74
+Redwing Hall,988,92,80066 Chinook Way,1669.69,-0.89
+International Hall,989,15,86 Lunder Avenue,1607.89,-0.95
+Kim Hall,990,56,9302 Eastlawn Center,1108.05,-0.73
+Rigney Hall,991,17,71 Algoma Terrace,1290.63,-0.65
+Nancy Hall,992,63,95025 Glendale Hill,501.2,-0.1
+Pepper Wood Hall,993,29,4 Macpherson Street,1797.36,-0.13
+Dovetail Hall,994,72,08018 Bartillon Terrace,1357.23,-0.39
+Magdeline Hall,995,94,1 Bartelt Court,1251.78,-0.48
+Jay Hall,996,43,022 American Park,1018.59,-0.89
+Blue Bill Park Hall,997,75,7 Northland Court,539.43,-0.21
+Loeprich Hall,998,31,783 Ilene Circle,106.74,-0.06
+Manitowish Hall,999,39,1 Main Plaza,1505.04,-0.55
+Quincy Hall,1000,74,17 Thompson Alley,1007.83,-0.79
