@@ -150,7 +150,9 @@ class CusController(UserController):
         oid = self.halls[self.halls['hid'] == int(hid)].values[0][2]
 
         # find the deposit amount
-        amount = self.halls[self.halls['hid'] == int(hid)].values[0][4]
+        amount = float(self.halls[self.halls['hid'] == int(hid)].values[0][4]) \
+                 + float(self.halls[self.halls['hid'] == int(hid)].values[0][4]) \
+                 * float(self.halls[self.halls['hid'] == int(hid)].values[0][5])
 
         payment = Payment(pid, pay_date, cid, oid, amount)
         # pid,date,send_from,send_to,amount
@@ -192,6 +194,11 @@ class CusController(UserController):
         hid = self.quotations[self.quotations['qid'] == int(qid)].values[0][1]
         deposit = self.halls[self.halls['hid'] == int(hid)].values[0][4]
         return deposit
+
+    def get_discount_by_qid(self, qid):
+        hid = self.quotations[self.quotations['qid'] == int(qid)].values[0][1]
+        discount = self.halls[self.halls['hid'] == int(hid)].values[0][5]
+        return discount
 
     def generate_receipt(self, payment):
         pid = payment.get_transaction_id()

@@ -425,7 +425,7 @@ class UserInterface:
                 quo_page = Page(title='Your Approved Quotations', contents=['You have no approved quotation'],
                                 options={'Any Key': 'back to view hall page'})
                 print(quo_page)
-                option = scanner.accept_any_key()
+                scanner.accept_any_key()
             # first choose which hall to book
             if option == 'C':
                 qid = scanner.accept_cus_quotation_id(quo_list)
@@ -460,7 +460,10 @@ class UserInterface:
         valid_date = scanner.accept_valid_date()
         code = scanner.accept_save_code()
         deposit = self.cus_controller.get_deposit_by_qid(qid)
-        confirm_page = Page(title='Pay Deposit', contents=['Deposit: ' + str(deposit)],
+        discount = self.cus_controller.get_discount_by_qid(qid)
+        # negative
+        cut = float(deposit) * float(discount)
+        confirm_page = Page(title='Pay Deposit', contents=['Deposit: ' + str(deposit) + ' - ' + str(-cut)],
                             options={'C': 'confirm', 'G': 'give up'})
         print(confirm_page)
         option1 = scanner.accept_option(confirm_page.getOptions())
@@ -519,12 +522,13 @@ class UserInterface:
         hall_list = self.cus_controller.get_halls_list()
         result = []
         for hall in hall_list:
-            if keyword in hall.get_hall_description() or keyword in hall.get_hall_name():
+            if keyword.lower() in str(hall.get_hall_description()).lower() \
+                    or keyword.lower() in str(hall.get_hall_name()).lower():
                 result.append(hall)
         if len(result) == 0:
             result = ['No halls found']
         result_page = Page(title='Search Result', contents=result,
-                           options={'Q': 'Request quotation', 'B': 'Book hall',
+                           options={'V': 'View hall page', 'Q': 'Request quotation', 'B': 'Book hall',
                                     'H': 'to home page'})
         print(result_page)
         option = scanner.accept_option(result_page.getOptions())
