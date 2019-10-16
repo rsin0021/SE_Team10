@@ -112,6 +112,13 @@ class CusController(UserController):
         return hall_list
 
     def add_booking(self, payment, qid):
+        # once the hall is booked, change its quotation status to 'finished'
+        self.quotations.loc[self.quotations['qid'] == int(qid), 'status'] = 'completed'
+        self.quotations.to_csv('../data/quotations.csv', header=True, index=False)
+        # refresh
+        self.quotations = pd.read_csv('../data/quotations.csv')
+
+
         bid = self.generate_id('booking')
         hid = self.quotations[self.quotations['qid'] == int(qid)].values[0][1]
         uid = payment.get_send_from()

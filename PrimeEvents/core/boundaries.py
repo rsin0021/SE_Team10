@@ -436,16 +436,17 @@ class UserInterface:
 
                 # if paid
                 if next_option in ['R', 'S']:
+                    state2, booking = self.cus_controller.add_booking(payment, qid)
                     if next_option == 'R':
                         receipt = self.cus_controller.generate_receipt(payment)
                         receipt_page = Page(title='Your Receipt', contents=[receipt],
                                             options={'Any Key': 'see booking detail'})
                         print(receipt_page)
                         scanner.accept_any_key()
-                    state2, booking = self.cus_controller.add_booking(payment, qid)
-                    booking_ok_page = Page(title='Booking Detail', contents=[booking],
+                    if next_option == 'R':
+                      booking_ok_page = Page(title='Booking Detail', contents=[booking],
                                            options={'Any Key': 'back to view hall page'})
-                    print(booking_ok_page)
+                      print(booking_ok_page)
                     scanner.accept_any_key()
                     return 'V'
                 # if not paid
