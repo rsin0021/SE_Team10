@@ -386,10 +386,10 @@ class UserInterface:
         state, quo = self.cus_controller.add_quotation(hid, s_date, e_date, num_of_ges, cus_id)
 
         send_page = Page(title='Request Quotation', contents=['Send successfully!', quo],
-                         options={'Any Key': 'back to view hall page'})
+                         options={'Any Key': 'go to home page'})
         print(send_page)
         scanner.accept_any_key()
-        return 'V'
+        return 'H'
 
     # V
     def view_hall_boundary(self):
@@ -423,9 +423,11 @@ class UserInterface:
                 option = scanner.accept_option(quo_page.getOptions())
             else:
                 quo_page = Page(title='Your Approved Quotations', contents=['You have no approved quotation'],
-                                options={'Any Key': 'back to view hall page'})
+                                options={'Any Key': ' go to home page'})
                 print(quo_page)
                 scanner.accept_any_key()
+                option = 'H'
+                return option
             # first choose which hall to book
             if option == 'C':
                 qid = scanner.accept_cus_quotation_id(quo_list)
@@ -513,7 +515,7 @@ class UserInterface:
                 error_page = Page(title='Quotation Requests', contents=['Error!'],
                                   options={'Any Key': 'back to quotation requests page'})
                 print(error_page)
-            return 'Q'
+            return 'RQ'
 
     # S
     def search_hall_boundary(self):

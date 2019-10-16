@@ -28,7 +28,6 @@ class UserController:
         # Refresh the data of the controller
         self.users = pd.read_csv('../data/users.csv')
 
-
         # If register successfully
         if register_type == 'Administrator':
             user = Admin(name, email, uid, password)
@@ -166,7 +165,7 @@ class CusController(UserController):
 
     def add_quotation(self, hid, s_date, e_date, num_of_ges, cus_id):
         qid = self.generate_id('quotation')
-        hall_name = (self.halls[self.halls['hid'] == 1])['Hall_name'].values[0][0]
+        hall_name = (self.halls[self.halls['hid'] == int(hid)])['Hall_name'].values[0]
 
         quo = Quotation(qid, hid, hall_name, cus_id, num_of_ges, s_date, e_date)
 
@@ -187,6 +186,7 @@ class CusController(UserController):
         for row in self.quotations[(self.quotations['cus_id'] == int(cid))
                         & (self.quotations['status'] == 'approved')].values:
             quo = Quotation(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8])
+            print(quo)
             quo_list.append(quo)
         return True, quo_list
 
@@ -254,3 +254,4 @@ class OwnerController(UserController):
 
 class AdminController(UserController):
     pass
+
