@@ -4,11 +4,6 @@
     <list default="true" id="b8e9f728-1f8e-4006-a9a3-bff8e48ff35e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/boundaries.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/boundaries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/controllers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/bookings.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/bookings.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/payments.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/payments.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/quotations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/quotations.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

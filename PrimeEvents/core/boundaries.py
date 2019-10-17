@@ -349,7 +349,7 @@ class UserInterface:
         state, user = self.user_controller.check_login(email, password)
         if not state:
             login_fail_page = Page(title='Login',
-                                   contents='Failed!',
+                                   contents=['Failed!'],
                                    options={'Any Key': 'go to login/register page'})
             print(login_fail_page)
             scanner.accept_any_key()
