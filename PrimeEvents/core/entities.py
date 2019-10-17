@@ -110,10 +110,10 @@ class Hall:
         self.discount = discount
 
     def __str__(self):
-        return 'Hall Name: ' + self.hall_name + '\n' +\
+        return 'Hall Name: ' + str(self.hall_name) + '\n' +\
                'Hall ID: ' + str(self.hall_ID) + '\n' +\
                'Description: ' + '\n' +\
-               self.hall_description + '\n' +\
+               str(self.hall_description) + '\n' +\
                'Deposit: ' + str(self.deposit) + '\n' +\
                'Discount: ' + str(self.discount)
 
@@ -166,7 +166,8 @@ class Booking:
         self.pid = pid
 
     def __str__(self):
-        return 'Hall ID: ' + str(self.hall_ID) + '\n' +\
+        return 'Booking ID: ' + str(self.book_id) + '\n' +\
+               'Hall ID: ' + str(self.hall_ID) + '\n' +\
                'Booking Date: ' + str(self.booking_date) + '\n' +\
                'Book from ' + str(self.s_date) +\
                ' To ' + str(self.e_date) + '\n' +\

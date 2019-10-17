@@ -1,5 +1,5 @@
 from core.controllers import UserController, OwnerController, CusController, AdminController
-from datetime import date
+from datetime import date, timedelta
 import re
 
 
@@ -184,13 +184,43 @@ class Scanner:
         input(self.massage)
 
     def accept_book_date(self):
+        date_formate = re.compile(r'^[0-9][0-9]{3}-(([0][1-9])|([1][0-2]))-(([0-2][0-9])|([3][0-1]))$')
         self.massage = 'Book from (YYYY-MM-DD): '
-        start_str = str(input(self.massage))
-        s_date = date.fromisoformat(start_str)
-
+        while True:
+            start_str = str(input(self.massage))
+            if not date_formate.match(start_str):
+                print('Wrong format!! TRY AGAIN')
+            else:
+                try:
+                    s_date = date.fromisoformat(start_str)
+                except ValueError:
+                    print('Wrong date!! TRY AGAIN')
+                    continue
+                if s_date < date.today():
+                    print('You only can book for future!! TRY AGAIN')
+                elif s_date < date.today() + timedelta(days=1):
+                    print('Book at least 1 day in advance!! TRY AGAIN')
+                elif s_date > date.today() + timedelta(days=30):
+                    print('Book at most 30 days in advance!! TRY AGAIN')
+                else:
+                    break
         self.massage = 'Book until (YYYY-MM-DD): '
-        end_str = str(input(self.massage))
-        e_date = date.fromisoformat(end_str)
+        while True:
+            end_str = str(input(self.massage))
+            if not date_formate.match(end_str):
+                print('Wrong format!! TRY AGAIN')
+            else:
+                try:
+                    e_date = date.fromisoformat(end_str)
+                except ValueError:
+                    print('Wrong date!! TRY AGAIN')
+                    continue
+                if e_date < s_date:
+                    print('Could not end before start date!! TRY AGAIN')
+                elif e_date > s_date + timedelta(days=90):
+                    print('Could not book longer than 90 days!! TRY AGAIN')
+                else:
+                    break
 
         return s_date, e_date
 
@@ -280,6 +310,17 @@ class Scanner:
                 print('Invalid input!! TRY AGAIN')
         return user_input
 
+    def accept_confirm(self):
+        self.massage = 'Are you sure?[y/n]: '
+
+        while True:
+            user_input = input(self.massage)
+            if user_input.upper() in ['Y', 'N']:
+                break
+            else:
+                print('Invalid input!! TRY AGAIN')
+        return user_input.upper()
+
 
 class UserInterface:
 
@@ -368,9 +409,9 @@ class UserInterface:
         scanner = Scanner()
 
         while True:
-            hid = scanner.accept_normal_attributes('Hall ID(enter -1 to view hall page)')
+            hid = scanner.accept_normal_attributes('Hall ID(enter -1 to home page)')
             if hid == '-1':
-                return 'V'
+                return 'H'
             # check if the hall exists
             exists = self.cus_controller.check_hall_exist(hid)
             if exists:
@@ -444,17 +485,17 @@ class UserInterface:
                         print(receipt_page)
                         scanner.accept_any_key()
                     if next_option == 'R':
-                      booking_ok_page = Page(title='Booking Detail', contents=[booking],
-                                           options={'Any Key': 'back to view hall page'})
-                      print(booking_ok_page)
+                        booking_ok_page = Page(title='Booking Detail', contents=[booking],
+                                               options={'Any Key': 'go to home page'})
+                        print(booking_ok_page)
                     scanner.accept_any_key()
-                    return 'V'
+                    return 'H'
                 # if not paid
                 elif next_option == 'G':
 
-                    return 'V'
+                    return 'H'
             else:
-                return 'V'
+                return 'H'
 
     def pay_depose_boundary(self, user, qid):
         scanner = Scanner()
@@ -462,11 +503,12 @@ class UserInterface:
         name = scanner.accept_normal_attributes('Name on the Card')
         valid_date = scanner.accept_valid_date()
         code = scanner.accept_save_code()
-        deposit = self.cus_controller.get_deposit_by_qid(qid)
-        discount = self.cus_controller.get_discount_by_qid(qid)
+        deposit = round(float(self.cus_controller.get_deposit_by_qid(qid)), 2)
+        discount = round(float(self.cus_controller.get_discount_by_qid(qid)), 2)
         # negative
-        cut = float(deposit) * float(discount)
-        confirm_page = Page(title='Pay Deposit', contents=['Deposit: ' + str(deposit) + ' - ' + str(-cut)],
+        cut = round(deposit * discount, 2)
+        confirm_page = Page(title='Pay Deposit', contents=['Deposit: ' + str(deposit) + ' - ' + str(-cut)
+                                                           + ' = ' + str(deposit + cut)],
                             options={'C': 'confirm', 'G': 'give up'})
         print(confirm_page)
         option1 = scanner.accept_option(confirm_page.getOptions())
@@ -561,7 +603,7 @@ class UserInterface:
             option = scanner.accept_option(home_page1.getOptions())
         elif user.get_login_as() == 'Owner':
             options = {'MH': 'Manage hall',
-                       'M': 'Manage booking',
+                       'MB': 'Manage booking',
                        'RQ': 'Response quotation',
                        'W': 'Logout'}
             home_page1 = Page(title='Home', contents=['Hi! What do you want?'], options=options)
@@ -581,9 +623,9 @@ class UserInterface:
     def cus_manage_booking_boundary(self, user):
         while True:
             scanner = Scanner()
-            hall_list = self.cus_controller.get_bookings_by_id(user.get_user_id())
-            if len(hall_list) > 0:
-                contents = hall_list
+            booking_list = self.cus_controller.get_bookings_by_id(user.get_user_id())
+            if len(booking_list) > 0:
+                contents = booking_list
                 options = {'D': 'change date of a booking', 'C': 'cancel a booking', 'H': 'home page'}
             else:
                 contents = ['You don\'t have booking']
@@ -604,12 +646,58 @@ class UserInterface:
                 print(manage_booking_page)
                 option = scanner.accept_option(manage_booking_page.getOptions())
             if option == 'D':
-                bid = scanner.accept_cus_booking_id(hall_list)
-                s_date, e_date = scanner.accept_valid_date()
+                bid = scanner.accept_cus_booking_id(booking_list)
+                s_date, e_date = scanner.accept_book_date()
                 self.cus_controller.update_booking_date(bid, s_date, e_date)
-            elif options == 'C':
-                bid = scanner.accept_cus_booking_id(hall_list)
-                self.cus_controller.cancel_booking(bid)
+            elif option == 'C':
+                bid = scanner.accept_cus_booking_id(booking_list)
+                r = scanner.accept_confirm()
+                if r == 'N':
+                    return 'M'
+                else:
+                    self.cus_controller.cancel_booking(bid)
+                    return 'M'
+            else:
+                return 'H'
+
+    # MB
+    def owner_manage_booking_boundary(self, user):
+        while True:
+            scanner = Scanner()
+            booking_list = self.owner_controller.get_bookings_by_id(user.get_user_id())
+            if len(booking_list) > 0:
+                contents = booking_list
+                options = {'D': 'change date of a booking', 'C': 'cancel a booking', 'H': 'home page'}
+            else:
+                contents = ['You don\'t have booking']
+                options = {'H': 'home page'}
+            manage_booking_page = Page(title='Manage Booking', contents=contents,
+                                       options=options)
+            print(manage_booking_page)
+            option = scanner.accept_option(manage_booking_page.getOptions())
+            if option == 'H':
+                return option
+            while True:
+                if option == 'P':
+                    manage_booking_page.pre_page()
+                elif option == 'N':
+                    manage_booking_page.next_page()
+                else:
+                    break
+                print(manage_booking_page)
+                option = scanner.accept_option(manage_booking_page.getOptions())
+            if option == 'D':
+                bid = scanner.accept_cus_booking_id(booking_list)
+                s_date, e_date = scanner.accept_book_date()
+                self.cus_controller.update_booking_date(bid, s_date, e_date)
+            elif option == 'C':
+                bid = scanner.accept_cus_booking_id(booking_list)
+                r = scanner.accept_confirm()
+                if r == 'N':
+                    return 'MB'
+                else:
+                    self.cus_controller.cancel_booking(bid)
+                    return 'MB'
             else:
                 return 'H'
 
