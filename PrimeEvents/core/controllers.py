@@ -60,6 +60,13 @@ class UserController:
                     return True, user
         return False, None
 
+    def check_email_exists(self, email):
+        users = pd.read_csv('../data/users.csv')
+        exists = False
+        if len(users[users['email'] == str(email)]) != 0:
+            exists = True
+        return exists
+
     def get_halls_list(self):
         halls = pd.read_csv('../data/halls.csv')
         halls_list = []

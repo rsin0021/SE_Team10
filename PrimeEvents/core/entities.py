@@ -335,3 +335,42 @@ class Quotation:
     def set_e_date(self, e_date):
         self.e_date = e_date
 
+
+class Review:
+
+    def __init__(self, rid, hid, hall_name, r_date, r_content):
+        self.rid = rid
+        self.hid = hid
+        self.hall_name = hall_name
+        self.r_date = r_date
+        self.r_content = r_content
+
+    def get_rid(self):
+        return self.rid
+
+    def get_hid(self):
+        return self.hid
+
+    def get_hall_name(self):
+        return self.hall_name
+
+    def get_r_date(self):
+        return self.r_date
+
+    def get_r_content(self):
+        return self.r_content
+
+    def set_rid(self, rid):
+        self.rid = rid
+
+    def set_hid(self, hid):
+        self.hid = hid
+
+    def set_hall_name(self, hall_name):
+        self.hall_name = hall_name
+
+    def set_r_date(self, r_date):
+        self.r_date = r_date
+
+    def set_r_content(self, r_content):
+        self.r_content = r_content

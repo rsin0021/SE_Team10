@@ -321,6 +321,28 @@ class Scanner:
                 print('Invalid input!! TRY AGAIN')
         return user_input.upper()
 
+    def accept_email(self):
+        self.massage = 'Enter a your email address '
+        ok_date = re.compile(r'^([0][1-9])|([1][0-2])-[0-9][0-9]$')
+        while True:
+            user_input = str(input(self.massage))
+            regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+            if re.search(regex, user_input):
+                break
+            else:
+                print('INVALID EMAIL ! : Enter a valid Email')
+        return user_input
+
+    def accept_name(self):
+        self.massage = 'Enter a your name '
+        while True:
+            user_input = str(input(self.massage))
+            if user_input.isalpha():
+                break
+            else:
+                print('INVALID NAME ! : Enter a valid Name')
+        return user_input
+
 
 class UserInterface:
 
@@ -345,8 +367,7 @@ class UserInterface:
         # setup the register page
         register_page = Page(title='Register',
                              options={'C': 'register as customer',
-                                      'O': 'register as owner',
-                                      'A': 'register as admin'})
+                                      'O': 'register as owner'})
         # print the page
         print(register_page)
 
@@ -354,8 +375,14 @@ class UserInterface:
         scanner = Scanner()
         register_type = scanner.accept_register_type()
         # uid = scanner.accept_normal_attributes('id')
-        name = scanner.accept_normal_attributes('name')
-        email = scanner.accept_normal_attributes('email')
+        name = scanner.accept_name()
+        while True:
+            email = scanner.accept_email()
+            exists = self.user_controller.check_email_exists(email)
+            if exists:
+                print('This email is already used!! TRY AGAIN')
+            else:
+                break
         password = scanner.accept_normal_attributes('password')
         address = 'NA'
         phone = 'NA'
@@ -370,12 +397,12 @@ class UserInterface:
         if state:
             ok_page = Page(title='Register',
                            contents=['Succeed!', user],
-                           options={'Any Key': 'go to login/register page'})
+                           options={'Any Key': 'go to welcome page'})
             print(ok_page)
         else:
             not_ok_page = Page(title='Register',
                                contents=['Failed!'],
-                               options={'Any Key': 'go to login/register page'})
+                               options={'Any Key': 'go to welcome page'})
             print(not_ok_page)
         scanner.accept_any_key()
         # To tell main function which boundary should called next
@@ -391,7 +418,7 @@ class UserInterface:
         if not state:
             login_fail_page = Page(title='Login',
                                    contents=['Failed!'],
-                                   options={'Any Key': 'go to login/register page'})
+                                   options={'Any Key': 'welcome page'})
             print(login_fail_page)
             scanner.accept_any_key()
             option = 'W'
