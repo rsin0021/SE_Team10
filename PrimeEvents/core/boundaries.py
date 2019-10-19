@@ -85,7 +85,7 @@ class Page:
         elif self.current_index == self.max_index:
             num = len(self.contents) % 3
             self.show_contents = []
-            for i in range(len(self.contents) - 1, len(self.contents) - num):
+            for i in range(len(self.contents) - num, len(self.contents)):
                 self.show_contents.append(self.contents[i])
 
     def pre_page(self):
@@ -160,7 +160,7 @@ class Scanner:
         return user_input
 
     def accept_phone(self):
-        self.massage = 'Enter the phone: '
+        self.massage = 'Enter the phone(10 digits): '
         while True:
             user_input = str(input(self.massage))
             if len(user_input) != 10:
@@ -322,25 +322,36 @@ class Scanner:
         return user_input.upper()
 
     def accept_email(self):
-        self.massage = 'Enter a your email address '
-        ok_date = re.compile(r'^([0][1-9])|([1][0-2])-[0-9][0-9]$')
+        self.massage = 'Enter a your email address: '
         while True:
             user_input = str(input(self.massage))
             regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
             if re.search(regex, user_input):
                 break
             else:
-                print('INVALID EMAIL ! : Enter a valid Email')
+                print('INVALID EMAIL ! Enter a valid Email: ')
         return user_input
 
     def accept_name(self):
-        self.massage = 'Enter a your name '
+        self.massage = 'Enter a your name(First + \'space\'r + Last): '
         while True:
             user_input = str(input(self.massage))
-            if user_input.isalpha():
+            ok_name = re.compile(r'^[a-zA-Z]+[ ]?[a-zA-Z]+$')
+            if ok_name.match(user_input):
                 break
             else:
-                print('INVALID NAME ! : Enter a valid Name')
+                print('INVALID NAME ! Enter a valid Name: ')
+        return user_input
+
+    def accept_bankcard_name(self):
+        self.massage = 'Enter the name on the card: '
+        while True:
+            user_input = str(input(self.massage))
+            ok_name = re.compile(r'^[a-zA-Z]+[ ]?[a-zA-Z]+$')
+            if ok_name.match(user_input):
+                break
+            else:
+                print('INVALID NAME ! Enter a valid Name: ')
         return user_input
 
 
@@ -527,7 +538,7 @@ class UserInterface:
     def pay_depose_boundary(self, user, qid):
         scanner = Scanner()
         bankcard = scanner.accept_bankcard_num()
-        name = scanner.accept_normal_attributes('Name on the Card')
+        name = scanner.accept_bankcard_name()
         valid_date = scanner.accept_valid_date()
         code = scanner.accept_save_code()
         deposit = round(float(self.cus_controller.get_deposit_by_qid(qid)), 2)

@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8e9f728-1f8e-4006-a9a3-bff8e48ff35e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/User Validations.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/boundaries.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/boundaries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/controllers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/entities.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/entities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/reviews.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reviews.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="PrimeEvents" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -219,6 +219,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570511477882</updated>
       <workItem from="1571389405114" duration="2684000" />
+      <workItem from="1571467799357" duration="3236000" />
     </task>
     <servers />
   </component>
@@ -273,6 +274,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PrimeEvents$test.coverage" NAME="test Coverage Results" MODIFIED="1571391197240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/PrimeEvents$main.coverage" NAME="main Coverage Results" MODIFIED="1571392042534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/PrimeEvents$main.coverage" NAME="main Coverage Results" MODIFIED="1571470921642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
   </component>
 </project>
