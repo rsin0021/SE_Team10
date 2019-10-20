@@ -225,10 +225,12 @@ class Scanner:
         return s_date, e_date
 
     def accept_owner_quotation_id(self, quo_list):
-        self.massage = 'Enter the Quotation ID: '
+        self.massage = 'Enter the Quotation ID(Enter -1 to go back): '
         while True:
             user_input = str(input(self.massage))
             if user_input in [str(quo.get_qid()) for quo in quo_list]:
+                break
+            elif user_input == '-1':
                 break
             else:
                 print('Invalid input!! TRY AGAIN')
@@ -259,10 +261,12 @@ class Scanner:
         return user_input
 
     def accept_cus_quotation_id(self, quo_list):
-        self.massage = 'Enter the Quotation ID: '
+        self.massage = 'Enter the Quotation ID(Enter -1 to go back): '
         while True:
             user_input = str(input(self.massage))
             if user_input in [str(quo.get_qid()) for quo in quo_list]:
+                break
+            elif user_input == '-1':
                 break
             else:
                 print('Invalid input!! TRY AGAIN')
@@ -511,6 +515,8 @@ class UserInterface:
             # first choose which hall to book
             if option == 'C':
                 qid = scanner.accept_cus_quotation_id(quo_list)
+                if qid == '-1':
+                    return 'B'
                 # second do the pay depose
                 next_option, payment = self.pay_depose_boundary(user, qid)
 
@@ -587,6 +593,8 @@ class UserInterface:
             return option
         else:
             qid = scanner.accept_owner_quotation_id(quo_list)
+            if qid == '-1':
+                return 'RQ'
             decision = scanner.accept_owner_decision()
             if decision == 'A':
                 amount = scanner.accept_quotation_amount()
@@ -601,7 +609,7 @@ class UserInterface:
                 error_page = Page(title='Quotation Requests', contents=['Error!'],
                                   options={'Any Key': 'back to quotation requests page'})
                 print(error_page)
-                scanner.accept_any_key()
+            scanner.accept_any_key()
             return 'RQ'
 
     # S
