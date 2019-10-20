@@ -7,4 +7,4 @@ qid,hid,hall_name,cus_id,guests,s_date,e_date,amount,status
 6,1,Bluestem Hall,101,1,1234-12-12,1234-12-12,3000,completed
 7,1,Bluestem Hall,101,500,2019-11-11,2019-12-11,Unknown,pending
 8,1,Bluestem Hall,101,100,2019-11-11,2019-12-12,Unknown,pending
-9,1,Bluestem Hall,104,123,2019-11-11,2019-11-12,123,approved
+9,1,Bluestem Hall,104,123,2019-11-11,2019-11-12,123,completed

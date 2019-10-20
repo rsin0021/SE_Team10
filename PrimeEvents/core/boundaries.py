@@ -155,6 +155,8 @@ class Scanner:
 
             if user_input.isdigit():
                 break
+            elif user_input == '-1':
+                break
             else:
                 print('Invalid input!! TRY AGAIN')
         return user_input
@@ -481,7 +483,7 @@ class UserInterface:
         # Get a halls stored in a list
         halls_list = self.user_controller.get_halls_list()
         view_page = Page(title='View Halls', contents=halls_list,
-                         options={'B': 'book a hall', 'S': 'search a hall', 'H': 'home page'})
+                         options={'B': 'book a hall', 'S': 'search a hall', 'Q': 'request quotation', 'H': 'home page'})
         print(view_page)
         option = scanner.accept_option(view_page.getOptions())
         while True:
@@ -502,15 +504,14 @@ class UserInterface:
         if state:
             if len(quo_list) > 0:
                 quo_page = Page(title='Your Approved Quotations', contents=quo_list,
-                                options={'C': 'choose', 'B': 'back to view hall page'})
+                                options={'C': 'choose', 'V': ' to view hall page', 'H': 'to home page'})
                 print(quo_page)
-                option = scanner.accept_option(quo_page.getOptions())
             else:
                 quo_page = Page(title='Your Approved Quotations', contents=['You have no approved quotation'],
-                                options={'Any Key': ' go to home page'})
+                                options={'V': ' to view hall page', 'H': 'to home page'})
                 print(quo_page)
-                scanner.accept_any_key()
-                option = 'H'
+            option = scanner.accept_option(quo_page.getOptions())
+            if option == 'H':
                 return option
             # first choose which hall to book
             if option == 'C':
@@ -540,7 +541,7 @@ class UserInterface:
 
                     return 'H'
             else:
-                return 'H'
+                return option
 
     def pay_depose_boundary(self, user, qid):
         scanner = Scanner()
