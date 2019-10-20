@@ -447,7 +447,8 @@ class UserInterface:
         scanner = Scanner()
 
         while True:
-            hid = scanner.accept_normal_attributes('Hall ID(enter -1 to home page)')
+            # hid = scanner.accept_normal_attributes('Hall ID(enter -1 to home page)')
+            hid = scanner.accept_integer('Hall ID(enter -1 to home page)')
             if hid == '-1':
                 return 'H'
             # check if the hall exists
@@ -565,7 +566,11 @@ class UserInterface:
     def response_quotation_boundary(self, owner):
         scanner = Scanner()
         state, quo_list = self.owner_controller.get_quotations_by_oid(owner.get_user_id())
-        quo_page = Page(title='Quotation Requests', contents=quo_list,
+        if len(quo_list) == 0:
+            contents = ['You have no quotation request']
+        else:
+            contents = quo_list
+        quo_page = Page(title='Quotation Requests', contents=contents,
                         options={'Q': 'response a quotation', 'H': 'go to home page'})
         print(quo_page)
         option = scanner.accept_option(quo_page.getOptions())
@@ -596,6 +601,7 @@ class UserInterface:
                 error_page = Page(title='Quotation Requests', contents=['Error!'],
                                   options={'Any Key': 'back to quotation requests page'})
                 print(error_page)
+                scanner.accept_any_key()
             return 'RQ'
 
     # S
@@ -705,10 +711,10 @@ class UserInterface:
             booking_list = self.owner_controller.get_bookings_by_id(user.get_user_id())
             if len(booking_list) > 0:
                 contents = booking_list
-                options = {'D': 'change date of a booking', 'C': 'cancel a booking', 'H': 'home page'}
+                options = {'A': 'add a booking', 'D': 'change date of a booking', 'C': 'cancel a booking', 'H': 'home page'}
             else:
                 contents = ['You don\'t have booking']
-                options = {'H': 'home page'}
+                options = {'A': 'add a booking', 'H': 'home page'}
             manage_booking_page = Page(title='Manage Booking', contents=contents,
                                        options=options)
             print(manage_booking_page)
@@ -736,6 +742,59 @@ class UserInterface:
                 else:
                     self.cus_controller.cancel_booking(bid)
                     return 'MB'
+            elif option == 'A':
+                # use owner id to find approved quotation
+                state, quo_list = self.owner_controller.get_approve_quotation(user.get_user_id())
+                if state:
+                    if len(quo_list) > 0:
+                        contents2 = quo_list
+                        options2 = {'C': 'choose a quotation for add booking', 'MB': 'back to manage booking page'}
+                    else:
+                        contents2 = ['You haven\'t approved any quotation request']
+                        options2 = {'MB': 'back to manage booking page'}
+                    add_page = Page(title='Approved quotation request', contents=contents2,
+                                    options=options2)
+                    print(add_page)
+                    option2 = scanner.accept_option(add_page.getOptions())
+                    while True:
+                        if option2 == 'P':
+                            add_page.pre_page()
+                        elif option2 == 'N':
+                            add_page.next_page()
+                        else:
+                            break
+                        print(add_page)
+                        option2 = scanner.accept_option(add_page.getOptions())
+                    if option2 == 'MB':
+                        return option2
+                    if option2 == 'C':
+                        qid = scanner.accept_cus_quotation_id(quo_list)
+                        cus = self.owner_controller.get_user_by_qid(qid)
+                        # second do the pay depose
+                        next_option, payment = self.pay_depose_boundary(cus, qid)
+
+                        # if paid
+                        if next_option in ['R', 'S']:
+                            state2, booking = self.cus_controller.add_booking(payment, qid)
+                            if next_option == 'R':
+                                receipt = self.cus_controller.generate_receipt(payment)
+                                receipt_page = Page(title='Your Receipt', contents=[receipt],
+                                                    options={'Any Key': 'see booking detail'})
+                                print(receipt_page)
+                                scanner.accept_any_key()
+                            if next_option == 'R':
+                                booking_ok_page = Page(title='Booking Detail', contents=[booking],
+                                                       options={'Any Key': 'go to home page'})
+                                print(booking_ok_page)
+                            scanner.accept_any_key()
+                            return 'H'
+                        # if not paid
+                        elif next_option == 'G':
+
+                            return 'H'
+                    else:
+                        return 'H'
+
             else:
                 return 'H'
 

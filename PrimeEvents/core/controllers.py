@@ -173,7 +173,7 @@ class CusController(UserController):
                  + float(halls[halls['hid'] == int(hid)].values[0][4]) \
                  * float(halls[halls['hid'] == int(hid)].values[0][5])
 
-        payment = Payment(pid, pay_date, cid, oid, amount)
+        payment = Payment(pid, pay_date, cid, oid, round(amount, 2))
         # pid,date,send_from,send_to,amount
         data = {'pid': [pid], 'date': [pay_date],
                 'send_from': [cid], 'send_to': [oid], 'amount': [amount]}
@@ -247,6 +247,33 @@ class OwnerController(UserController):
 
     def __init__(self):
         super().__init__()
+
+    def get_user_by_qid(self, qid):
+        quotations = pd.read_csv('../data/quotations.csv')
+        users = pd.read_csv('../data/users.csv')
+        row1 = quotations[quotations['qid'] == int(qid)].values[0]
+        uid = row1[3]
+        row = users[users['uid'] == int(uid)].values[0]
+        user = Customer(row[0], row[1], row[2], row[3], row[4], row[5])
+        return user
+
+    def get_approve_quotation(self, oid):
+        halls = pd.read_csv('../data/halls.csv')
+        # first get all hid of this owner
+        hid_list = []
+        for row in (halls[halls['oid'] == int(oid)]).values:
+            hid_list.append(row[1])
+
+        # second get all quotations which match these hid
+        quotations = pd.read_csv('../data/quotations.csv')
+        quo_list = []
+        for hid in hid_list:
+            for row in quotations[(quotations['hid'] == int(hid))
+                                  & (quotations['status'] == 'approved')].values:
+                quo = Quotation(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8])
+                quo_list.append(quo)
+
+        return True, quo_list
 
     def get_quotations_by_oid(self, oid):
         halls = pd.read_csv('../data/halls.csv')
